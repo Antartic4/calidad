@@ -26,11 +26,11 @@ export default function Form1Screen() {
           </span>
         </main>
         <aside className="bg-green-800 md:w-1/3 lg:w-1/4 px-5 py-40">
-          <Sidebar></Sidebar>
+          <Sidebar />
         </aside>
       </div>
 
-      <footer className="bg-slate-800 mt-auto p-5">
+      <footer className="bg-slate-800 mt-auto p-5 overflow-y-auto overflow-x-hidden">
         <h1 className="text-2xl md:text-4xl text-white">Footer</h1>
       </footer>
     </div>
