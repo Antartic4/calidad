@@ -9,13 +9,6 @@ async function handler(req, res) {
 
   await db.connect();
 
-  //   const existingUser = await User.findOne({ email: email });
-  //   if (existingUser) {
-  //     res.status(422).json({ message: 'El usuario ya existe' });
-  //     await db.disconnect();
-  //     return;
-  //   }
-
   const newUser = new User({
     first,
     last,
