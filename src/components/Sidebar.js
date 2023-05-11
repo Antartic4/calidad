@@ -28,6 +28,13 @@ export default function UserForm() {
           </button>
         </Link>
       </li>
+      <li className="nav-item p-2">
+        <Link href="/formularios/dashboard">
+          <button className="bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Dashboard
+          </button>
+        </Link>
+      </li>
     </ul>
   );
 }
