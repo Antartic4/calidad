@@ -1,7 +1,6 @@
 import React from 'react';
 import logofamosa from '../../src/logofamosaii.png';
 import Image from 'next/image';
-import Form1 from '../../src/components/Form1';
 import Sidebar from '../../src/components/Sidebar';
 
 export default function Form1Screen() {

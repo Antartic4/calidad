@@ -124,23 +124,24 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
   return (
     <Layout>
       <div className="bg-white h-screen flex justify-center ">
-        <div className="relative top-36 w-72 ">
+        <div className="relative top-36 w-full ">
           <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <h1 className="text-2xl font-bold">
-                Examen Destructive Cierre de Latas
+              <h1 className="text-2xl font-bold pb-5">
+                Examen Destructivo Cierre de Latas
               </h1>
               <h1 className="font-bold text-lg">&apos;Header&apos;</h1>
               <br />
               <div className="flex">
-                <h2 className="font-bold">Fecha:</h2>
-                <h2 className="pl-5">{datenow}</h2>
+                <h2 className="font-bold ">Fecha:</h2>
+                <h2 className="pl-5 pb-3">{datenow}</h2>
               </div>
               <div>
                 <h2 className="font-bold">Tapadora:</h2>
                 <div className="dropdown-container"></div>
                 <Controller
                   name="tapadora"
+                  className="pb-3"
                   control={control}
                   render={({ onChange, value, ref }) => (
                     <Select
@@ -154,7 +155,7 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                 />
               </div>
               <div>
-                <h2 className="font-bold">Tipo de Lata:</h2>
+                <h2 className="font-bold pt-3">Tipo de Lata:</h2>
                 <div className="dropdown-container"></div>
                 <Controller
                   name="tipolata"
@@ -171,7 +172,7 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                 />
               </div>
               <div>
-                <h2 className="font-bold">Producto:</h2>
+                <h2 className="font-bold pt-3">Producto:</h2>
                 <div className="dropdown-container"></div>
                 <Controller
                   name="producto"
@@ -188,7 +189,7 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                 />
               </div>
               <br />
-              <div className="">
+              <div className="text-center">
                 <input
                   type="submit"
                   style={{
@@ -200,6 +201,7 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
           </div>
         </div>
       </div>
+      <h1 className="font-bold text-2xl">Registros</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 py-3">
         {EDDCLheaders.map((EDDCLheader) => (
           <Link

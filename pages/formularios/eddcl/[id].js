@@ -130,9 +130,9 @@ export default function klk(props) {
   return (
     <Layout>
       <div className="justify-center flex">
-        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border border-black max-w-lg">
+        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 w-full border border-black">
           <h1 className="text-2xl text-center py-2 font-bold">
-            Examen Destructivo Doble Cierre Latas para :{' '}
+            {'Examen Destructivo Doble Cierre Latas para :'}
             <p className="font-bold text-2xl">{eddclheader._id}</p>
           </h1>
           <br />
@@ -161,17 +161,17 @@ export default function klk(props) {
           </div>
         </div>
       </div>
-      <div className="justify-center  flex pt-5">
-        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border border-black max-w-lg">
+      <div className="justify-center flex pt-5 w-full">
+        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border w-full border-black">
           <h1 className="text-2xl text-center py-2 font-bold">
-            Entrada Detalle para : <br /> {eddclheader.producto} (
+            Entrada Detalle para : {eddclheader.producto} (
             {eddclheader.tipolata})
           </h1>
           <br />
           {/* donde van los campos a entrar */}
           <div>
-            <div className=" flex justify-center">
-              <div className="relative ">
+            <div className=" ">
+              <div className="">
                 <div className="">
                   <form
                     onSubmit={handleSubmit(onSubmit)}
