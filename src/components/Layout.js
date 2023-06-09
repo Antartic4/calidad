@@ -70,8 +70,15 @@ export default function Layout({ title, children }) {
     <>
       <Head>
         <title>{title ? title : 'LF - Calidad'}</title>
-        <meta name="description" content="Ecommerce Website" />
+        <meta name="description" content="Website" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"></link>
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
@@ -119,7 +126,7 @@ export default function Layout({ title, children }) {
                       <Divider light />
                       <Box>
                         <div className="px-3 text-center py-3 font-bold hover:bg-gray-200">
-                          <Link href="/formularios">{nav_home}</Link>
+                          <Link href="/">{nav_home}</Link>
                         </div>
                         <div className="px-3 py-3 text-center font-bold hover:bg-gray-200">
                           <Link href="/aboutus">
@@ -172,7 +179,11 @@ export default function Layout({ title, children }) {
                 <div className="flex items-center">
                   <ul className="items-center hidden pr-10 text-base font-semibold cursor-pointer xl:flex">
                     <li className="px-3 py-3 hover:bg-gray-200">{nav_home}</li>
-                    <li className="px-3 py-3 hover:bg-gray-200">Formularios</li>
+                    <li className="px-3 py-3 hover:bg-gray-200">
+                      <Link legacyBehavior href="/">
+                        <div>Formularios</div>
+                      </Link>
+                    </li>
                     <li className="px-3 py-3 text-center items-center hover:bg-gray-200">
                       <Link legacyBehavior href="/aboutus">
                         <div>Sobre Nosotros</div>
