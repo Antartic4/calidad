@@ -10,7 +10,7 @@ export default function Home() {
     <Layout>
       <div>
         <div className="w-full py-10 my-5 bg-gray-300 border-stone-900 rounded-xl">
-          <h1 className="text-2xl font-bold">Menu de Inicio</h1>
+          <h1 className="text-2xl font-bold text-center">Menu de Inicio</h1>
           <br />
           <br />
           <br />

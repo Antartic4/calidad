@@ -334,19 +334,19 @@ export default function ScreenEachDash({
           <div className="text-lg ">
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center">
-                <h2>A: </h2>
+                <h2 className="font-bold">A: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'A').length}
                 </h2>
               </div>
               <div className="flex items-center justify-center pl-4">
-                <h2>B: </h2>
+                <h2 className="font-bold">B: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'B').length}
                 </h2>
               </div>
               <div className="flex items-center justify-center pl-4">
-                <h2>C: </h2>
+                <h2 className="font-bold">C: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'C').length}
                 </h2>
@@ -354,19 +354,19 @@ export default function ScreenEachDash({
             </div>
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center">
-                <h2>D: </h2>
+                <h2 className="font-bold">D: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'D').length}
                 </h2>
               </div>
               <div className="flex items-center justify-center pl-4">
-                <h2>E: </h2>
+                <h2 className="font-bold">E: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'E').length}
                 </h2>
               </div>
               <div className="flex items-center justify-center pl-4">
-                <h2>F: </h2>
+                <h2 className="font-bold">F: </h2>
                 <h2 className="pl-4">
                   {estado.filter((x) => x === 'F').length}
                 </h2>
