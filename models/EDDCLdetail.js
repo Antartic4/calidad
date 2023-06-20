@@ -21,7 +21,7 @@ const eDDCLdetailSchema = new mongoose.Schema(
     arrugas: { type: String, required: true },
     bandaimp: { type: String, required: true },
     fabricalatas: { type: String, required: true },
-    observaciones: { type: String, required: true },
+    observaciones: { type: String },
   },
   {
     timestamps: true,

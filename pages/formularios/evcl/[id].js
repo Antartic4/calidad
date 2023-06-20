@@ -12,6 +12,17 @@ import EVCLheader from '../../../models/EVCLheader';
 export default function klk(props) {
   const router = useRouter();
   const { evclheader, evcldetail } = props;
+  const comentarios = [];
+
+  console.log('evcldetail.length', evcldetail.length);
+  for (let i = 0; i < evcldetail.length; i++) {
+    if (evcldetail[i].observaciones.length > 1) {
+      comentarios.push(evcldetail[i].observaciones);
+      console.log('comentarios ' + i, evcldetail[i].observaciones);
+    }
+  }
+
+  console.log('comentarios', comentarios);
 
   const {
     register,
@@ -20,7 +31,24 @@ export default function klk(props) {
     formState: { errors },
   } = useForm();
 
-  console.log(evcldetail);
+  const opciones3 = [
+    {
+      value: 'PISOS Y TECHADOS TORGINOL, S.A.S.',
+      label: 'PISOS Y TECHADOS TORGINOL, S.A.S.',
+    },
+    {
+      value: 'ENVASES ANTILLANOS, S.R.L.',
+      label: 'ENVASES ANTILLANOS, S.R.L.',
+    },
+    {
+      value: 'ENVASES TROPICALES, C. X A.',
+      label: 'ENVASES TROPICALES, C. X A.',
+    },
+    {
+      value: 'EASY OPEN LID INDUSTRY CORP YIWU',
+      label: 'EASY OPEN LID INDUSTRY CORP YIWU',
+    },
+  ];
 
   const [eVCLHInfo, setEVCLHInfo] = useState({
     headid: router.query.id,
@@ -53,6 +81,10 @@ export default function klk(props) {
     {
       value: 'No',
       label: 'No',
+    },
+    {
+      value: '-',
+      lable: '-',
     },
   ];
 
@@ -109,23 +141,18 @@ export default function klk(props) {
 
   return (
     <Layout>
-      <div className="justify-center flex">
-        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border border-black max-w-lg">
-          <h1 className="text-2xl text-center py-2 font-bold">
+      <div className="flex justify-center">
+        <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
+          <h1 className="py-2 text-2xl font-bold text-center">
             Examen Destructivo Doble Cierre Latas para :
-            <p className="font-bold text-2xl">{evclheader._id}</p>
+            <p className="text-2xl font-bold">{evclheader._id}</p>
           </h1>
           <br />
           {/* Fecha */}
 
           <div className="flex justify-between">
             <p className="font-bold text-left">Fecha : </p>
-            <div className="pl-5 text-right pr-10">{evclheader.datenow}</div>
-          </div>
-          {/* Tapadora Text-Input */}
-          <div className="flex justify-between py-2">
-            <p className="font-bold text-left">Tapadora N° :</p>
-            <div className="pr-10 text-right">{evclheader.tapadora}</div>
+            <div className="pl-5 pr-10 text-right">{evclheader.datenow}</div>
           </div>
 
           {/* Tipo de Lata Text-Input */}
@@ -141,16 +168,16 @@ export default function klk(props) {
           </div>
         </div>
       </div>
-      <div className="justify-center  flex pt-5">
-        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border border-black max-w-lg">
-          <h1 className="text-2xl text-center py-2 font-bold">
+      <div className="flex justify-center pt-5">
+        <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
+          <h1 className="py-2 text-2xl font-bold text-center">
             Entrada Detalle para : <br /> {evclheader.producto} (
             {evclheader.tipolata})
           </h1>
           <br />
           {/* donde van los campos a entrar */}
           <div>
-            <div className=" flex justify-center">
+            <div className="flex justify-center ">
               <div className="relative ">
                 <div className="">
                   <form
@@ -158,158 +185,170 @@ export default function klk(props) {
                     onChange={handleChange}
                   >
                     {/* hora */}
-                    <div className="flex">
+                    <div className="flex justify-center">
                       <h2 className="font-bold">Hora:</h2>
                       <h2 className="pl-5">{tiempoahora}</h2>
                     </div>
                     <br />
                     {/* codigo */}
-                    <div>
-                      <h2 className="font-bold">Codigo:</h2>
-                      <div className="px-3">
-                        <input
-                          type="number"
-                          className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          placeholder="Codigo"
-                          name="codigo"
-                          ref={register}
-                        />
+                    <div className="flex justify-center">
+                      <div>
+                        <h2 className="font-bold">Codigo:</h2>
+                        <div className="px-3">
+                          <input
+                            type="number"
+                            className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            placeholder="Codigo"
+                            name="codigo"
+                            ref={register}
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        {/* Fabrica Latas */}
+                        <h2 className="font-bold">Fabrica Latas:</h2>
+                        <div className="px-3 ">
+                          <div className="dropdown-container">
+                            <Controller
+                              name="fabricalatas"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones3}
+                                  placeholder=""
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <br />
-                    {/* Fabrica Latas */}
-                    <div>
-                      <h2 className="font-bold">Fabrica Latas:</h2>
-                      <div className="px-3 ">
-                        <input
-                          type="text"
-                          className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="fabricalatas"
-                          placeholder="Fabrica de Latas"
-                          name="fabricalatas"
-                          ref={register}
-                        />
-                      </div>
-                    </div>
+
                     <br />
                     <h2 className="font-bold">Cabezas Aceptadas</h2>
                     {/* Cabeza #1 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #1:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza1"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                    <div className="flex">
+                      <div>
+                        <h2 className="font-bold">Cabeza #1:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza1"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    {/* Cabeza #2 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #2:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza2"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                      {/* Cabeza #2 */}
+                      <div>
+                        <h2 className="font-bold">Cabeza #2:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza2"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
                     {/* Cabeza #3 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #3:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza3"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                    <div className="flex">
+                      <div>
+                        <h2 className="font-bold">Cabeza #3:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza3"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    {/* Cabeza #4 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #4:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza4"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                      {/* Cabeza #4 */}
+                      <div>
+                        <h2 className="font-bold">Cabeza #4:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza4"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
                     {/* Cabeza #5 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #5:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza5"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                    <div className="flex">
+                      <div>
+                        <h2 className="font-bold">Cabeza #5:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza5"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    {/* Cabeza #6 */}
-                    <div>
-                      <h2 className="font-bold">Cabeza #6:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="cabeza6"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                      {/* Cabeza #6 */}
+                      <div>
+                        <h2 className="font-bold">Cabeza #6:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="cabeza6"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
@@ -317,49 +356,50 @@ export default function klk(props) {
                     <h2 className="font-bold">Inspección Latas</h2>
 
                     {/* Daños Mecanicos */}
-                    <div>
-                      <h2 className="font-bold">Daños Mecanicos:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="danos"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones}
-                              placeholder="Si / No"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                    <div className="flex">
+                      <div>
+                        <h2 className="font-bold">Daños Mecanicos:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="danos"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones}
+                                placeholder="Si / No"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    {/* Estado Compuesto */}
-                    <div>
-                      <h2 className="font-bold">Estado Compuesto:</h2>
-                      <div className="dropdown-container px-3">
-                        <Controller
-                          name="estado"
-                          control={control}
-                          render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones2}
-                              placeholder=""
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
-                          )}
-                        />
+                      {/* Estado Compuesto */}
+                      <div>
+                        <h2 className="font-bold">Estado Compuesto:</h2>
+                        <div className="px-3 dropdown-container">
+                          <Controller
+                            name="estado"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones2}
+                                placeholder="A -> F"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
                     {/* Aceptacion */}
-                    <div>
+                    <div className="flex items-center justify-center">
                       <h2 className="font-bold">Aceptación:</h2>
-                      <div className="dropdown-container px-3">
+                      <div className="px-3 dropdown-container ">
                         <Controller
                           name="aceptacion"
                           control={control}
@@ -378,7 +418,7 @@ export default function klk(props) {
                     <br />
                     {/* Observaciones */}
                     <div>
-                      <h2 className="font-bold">Observaciones:</h2>
+                      <h2 className="font-bold text-left">Observaciones:</h2>
                       <div className="px-3 ">
                         <textarea
                           id="observaciones"
@@ -390,7 +430,7 @@ export default function klk(props) {
                         ></textarea>
                       </div>
                     </div>
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex flex-col items-center justify-center">
                       <br />
                       <input type="submit" />
                     </div>
@@ -446,9 +486,6 @@ export default function klk(props) {
                 <th scope="col" className="px-6 py-3">
                   Aceptacion
                 </th>
-                <th scope="col" className="px-6 py-3">
-                  Observacion
-                </th>
               </tr>
             </thead>
             <tbody>
@@ -472,12 +509,18 @@ export default function klk(props) {
                   <td className="text-center">{item.danos}</td>
                   <td className="text-center">{item.estado}</td>
                   <td className="text-center">{item.aceptacion}</td>
-                  <td className="text-center">{item.observaciones}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="pt-4 bg-white">
+        {comentarios.map((item) => (
+          <h1 className="text-lg text-left text-red-600" key={item}>
+            • - {item.toString()}
+          </h1>
+        ))}
       </div>
       <br />
     </Layout>

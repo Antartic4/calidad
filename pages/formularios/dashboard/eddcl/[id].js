@@ -218,11 +218,13 @@ export default function ScreenEachDash({
 
   const ProgressBar = ({ progressPercentage }) => {
     return (
-      <div className="h-1 w-20 bg-gray-300">
+      <div className="w-20 h-1 bg-gray-300">
         <div
           style={{ width: `${progressPercentage}%` }}
           className={`h-full ${
-            progressPercentage < 50 ? 'bg-red-600' : 'bg-green-600'
+            progressPercentage < 0 || progressPercentage > 100
+              ? 'bg-red-600'
+              : 'bg-green-600'
           }`}
         ></div>
       </div>
@@ -231,162 +233,192 @@ export default function ScreenEachDash({
 
   return (
     <Layout>
-      {/* <div>
-        {detalles.map((element) => (
-          <h1 key={element.idpropio}>{element.idpropio}</h1>
-        ))}
-      </div> */}
       <div>
         <h1 className="text-2xl font-bold">Averages</h1>
       </div>
-      <div className="grid grid-cols-4 gap-3">
+      <br />
+      <div>
+        <h1 className="text-lg">Ancho:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
         {/* ancho minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Ancho Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={anchoMin * 50} />
-            <h1 className="pl-5 text-xs">2</h1>
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Minimo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">110</h1>
+            <ProgressBar progressPercentage={(anchoMin - 100) * (10 / 3)} />
+            <h1 className="pl-5 text-xs">120</h1>
           </div>
-          <h1 className="text-xs">{`Ancho Min Promedio: ${anchoMin}`}</h1>
+          <h1 className="text-xs">{`Minimo Promedio: ${anchoMin.toFixed(
+            2
+          )}`}</h1>
         </div>
         {/* ancho maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Ancho Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={anchoMax * 50} />
-            <h1 className="pl-5 text-xs">2</h1>
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Maximo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">110</h1>
+            <ProgressBar progressPercentage={(anchoMax - 100) * (10 / 3)} />
+            <h1 className="pl-5 text-xs">120</h1>
           </div>
-          <h1 className="text-xs">{`Ancho Max Promedio: ${anchoMax}`}</h1>
+          <h1 className="text-xs">{`Maximo Promedio: ${anchoMax.toFixed(
+            2
+          )}`}</h1>
         </div>
+      </div>
+      <div>
+        <br />
+        <h1 className="text-lg">Espesor:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
         {/* espesor minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Espesor Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={espesorMin * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Minimo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">40</h1>
+            <ProgressBar progressPercentage={(espesorMin - 40) * 20} />
+            <h1 className="pl-5 text-xs">45</h1>
           </div>
           <h1 className="text-xs">{`Ancho Max Promedio: ${espesorMin.toFixed(
-            3
+            2
           )}`}</h1>
         </div>
         {/* espesor maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Espesor Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={espesorMax * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Maximo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">40</h1>
+            <ProgressBar progressPercentage={(espesorMax - 40) * 20} />
+            <h1 className="pl-5 text-xs">45</h1>
           </div>
-          <h1 className="text-xs">{`Ancho Max Promedio: ${espesorMax.toFixed(
-            3
+          <h1 className="text-xs">{`Maximo Promedio: ${espesorMax.toFixed(
+            2
           )}`}</h1>
         </div>
-
-        {/* profund minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Profun Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={profundMin * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+      </div>
+      {/* profund minimo */}
+      <div>
+        <br />
+        <h1 className="text-lg">Profundidad:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Minimo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">135</h1>
+            <ProgressBar progressPercentage={(profundMin - 135) * 20} />
+            <h1 className="pl-5 text-xs">140</h1>
           </div>
-          <h1 className="text-xs">{`Ancho Max Promedio: ${profundMin.toFixed(
-            3
+          <h1 className="text-xs">{`Minimo Promedio: ${profundMin.toFixed(
+            2
           )}`}</h1>
         </div>
         {/* profund maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Profun Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={profundMax * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Maximo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">135</h1>
+            <ProgressBar progressPercentage={(profundMax - 135) * 20} />
+            <h1 className="pl-5 text-xs">140</h1>
           </div>
-          <h1 className="text-xs">{`Ancho Max Promedio: ${profundMax.toFixed(
-            3
+          <h1 className="text-xs">{`Maximo Promedio: ${profundMax.toFixed(
+            2
           )}`}</h1>
         </div>
-
-        {/* gancho cuerpo minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanCu Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={ganchocuerpoMin * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+      </div>
+      {/* gancho cuerpo minimo */}
+      <div>
+        <br />
+        <h1 className="text-lg">Gancho Cuerpo:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Minimo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">75</h1>
+            <ProgressBar progressPercentage={(ganchocuerpoMin - 75) * 20} />
+            <h1 className="pl-5 text-xs">80</h1>
           </div>
           <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMin.toFixed(
-            3
+            2
           )}`}</h1>
         </div>
         {/* gancho cuerpo maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanCu Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={ganchocuerpoMax * 20} />
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Maximo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">75</h1>
+            <ProgressBar progressPercentage={(ganchocuerpoMax - 75) * 20} />
+            <h1 className="pl-5 text-xs">80</h1>
           </div>
           <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMax.toFixed(
-            3
+            2
           )}`}</h1>
         </div>
-
-        {/* gancho tapa minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanTapa Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={ganchotapaMin} />
-            <h1 className="pl-5 text-xs">100</h1>
+      </div>
+      {/* gancho tapa minimo */}
+      <div>
+        <br />
+        <h1 className="text-lg">Gancho Tapa:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Minimo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">65</h1>
+            <ProgressBar progressPercentage={(ganchotapaMin - 65) * 20} />
+            <h1 className="pl-5 text-xs">70</h1>
           </div>
-          <h1 className="text-xs">{`Gancho Tapa Promedio: ${ganchotapaMin.toFixed(
-            3
+          <h1 className="text-xs">{`Minimo Promedio: ${ganchotapaMin.toFixed(
+            2
           )}`}</h1>
         </div>
         {/* gancho tapa maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanTapa Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={ganchotapaMax} />
-            <h1 className="pl-5 text-xs">100</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Maximo:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">65</h1>
+            <ProgressBar progressPercentage={(ganchotapaMax - 65) * 20} />
+            <h1 className="pl-5 text-xs">70</h1>
           </div>
-          <h1 className="text-xs">{`Gancho Tapa Promedio: ${ganchotapaMax.toFixed(
-            3
+          <h1 className="text-xs">{`Maximo Promedio: ${ganchotapaMax.toFixed(
+            2
           )}`}</h1>
         </div>
-        {/* traslape minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Traslape Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={traslapeMin * 4} />
-            <h1 className="pl-5 text-xs">25</h1>
+      </div>
+      {/* traslape minimo */}
+      <div>
+        <br />
+        <h1 className="text-lg">Traslape + Arrugas:</h1>
+      </div>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          Traslape:
+          <div className="flex items-center justify-center">
+            <h1 className="pr-5 text-xs">40</h1>
+            <ProgressBar progressPercentage={(traslapeMin - 40) * 10} />
+            <h1 className="pl-5 text-xs">50</h1>
           </div>
           <h1 className="text-xs">{`Traslape Promedio: ${traslapeMin.toFixed(
             3
           )}`}</h1>
         </div>
-        {/* traslape maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Traslape Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            <ProgressBar progressPercentage={traslapeMax * 4} />
-            <h1 className="pl-5 text-xs">25</h1>
-          </div>
-          <h1 className="text-xs">{`Traslape Promedio: ${traslapeMax.toFixed(
-            3
-          )}`}</h1>
-        </div>
 
         {/* arrugas */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          {`Arrugas: ${arrugas}`}
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          {arrugas === 0 ? (
+            <>
+              <div className="py-3 bg-green-500 rounded-lg">
+                {`Arrugas: ${arrugas}`}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="py-3 bg-red-600 rounded-lg ">
+                {`Arrugas: ${arrugas}`}
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="pt-10">

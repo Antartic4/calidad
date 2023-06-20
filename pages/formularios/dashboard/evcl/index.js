@@ -83,6 +83,7 @@ export default function ScreenEDDCL({ EVCLheaders, EVCLdetails, MaestroProd }) {
       }
     }
   }
+  cabecera2.reverse();
 
   console.log('cabecera2', cabecera2);
 
@@ -94,35 +95,31 @@ export default function ScreenEDDCL({ EVCLheaders, EVCLdetails, MaestroProd }) {
         <h1 className="text-2xl font-bold">Totales:</h1>
 
         <div className="">
-          <div className=" items-center text-center font-bold">
+          <div className="items-center font-bold text-center ">
             <div className="flex ">
               <div className="text-left">COUNT de datos en Cabecera:</div>
-              <div className="text-right pl-2">{EVCLheaders.length}</div>
+              <div className="pl-2 text-right">{EVCLheaders.length}</div>
             </div>
             <div className="flex ">
               <div className="text-left">COUNT de datos en Detalles:</div>
-              <div className="text-right pl-2">{detalles.length}</div>
+              <div className="pl-2 text-right">{detalles.length}</div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-5">
+        <br />
+        <div className="grid grid-cols-2 gap-5">
           {cabecera2.map((item) => (
             <div
               key={item.id}
               className="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
             >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+              <div className="px-6 py-3 border-b-2 border-neutral-100 dark:border-neutral-600 dark:text-neutral-50">
                 {item.productoname}
               </div>
               <div className="p-6">
                 <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                   Entradas: {item.cosas.length}
                 </h5>
-                <div className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                  {item.cosas.map((cosa) => (
-                    <h1 key={cosa.idpropio}>{cosa.idpropio}</h1>
-                  ))}
-                </div>
                 <Link
                   legacyBehavior
                   key={item.id}
@@ -138,7 +135,7 @@ export default function ScreenEDDCL({ EVCLheaders, EVCLdetails, MaestroProd }) {
                   </button>
                 </Link>
               </div>
-              <div className="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+              <div className="px-6 py-3 border-t-2 border-neutral-100 dark:border-neutral-600 dark:text-neutral-50">
                 {item.datenow}
               </div>
             </div>

@@ -15,7 +15,7 @@ const eVCLdetailSchema = new mongoose.Schema(
     danos: { type: String, required: true },
     estado: { type: String, required: true },
     aceptacion: { type: String, required: true },
-    observaciones: { type: String, required: true },
+    observaciones: { type: String },
   },
   {
     timestamps: true,

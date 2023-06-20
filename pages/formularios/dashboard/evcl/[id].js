@@ -14,6 +14,7 @@ export default function ScreenEachDash({
   const { query } = useRouter();
   const productId = query.id;
 
+  console.log('EVCLheaders', EVCLheaders);
   // init + cargar base de cabecera2
   let cabecera2 = [];
 
@@ -105,80 +106,161 @@ export default function ScreenEachDash({
       <h1 className="text-red-600">hola, soy el texto rojo.</h1>
     </>
   );
+  // meter todos los cabeceras en sus arreglos
+  const cabe1 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe1.push(detalles[i].cabeza1);
+  }
+  const hasNo1 = cabe1.includes('No');
+  const cabe2 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe2.push(detalles[i].cabeza2);
+  }
+  const hasNo2 = cabe2.includes('No');
+  const cabe3 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe3.push(detalles[i].cabeza3);
+  }
+  const hasNo3 = cabe3.includes('No');
+  const cabe4 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe4.push(detalles[i].cabeza4);
+  }
+  const hasNo4 = cabe4.includes('No');
+  const cabe5 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe5.push(detalles[i].cabeza5);
+  }
+  const hasNo5 = cabe5.includes('No');
+  const cabe6 = [];
+  for (let i = 0; i < detalles.length; i++) {
+    cabe6.push(detalles[i].cabeza6);
+  }
+  const hasNo6 = cabe6.includes('No');
+  const dano = [];
+  for (let i = 0; i < detalles.length; i++) {
+    dano.push(detalles[i].danos);
+  }
+  const hasDano = dano.includes('Si');
+  const estado = [];
+  for (let i = 0; i < detalles.length; i++) {
+    estado.push(detalles[i].estado);
+  }
+  const acepta = [];
+  for (let i = 0; i < detalles.length; i++) {
+    acepta.push(detalles[i].aceptacion);
+  }
+  const observ = [];
+  for (let i = 0; i < detalles.length; i++) {
+    observ.push(detalles[i].observaciones);
+  }
 
-  console.log('cabecera', cabecera2);
-  console.log('detalle', detalles);
+  const observacioness = observ.filter((word) => word.length > 2);
+
+  observacioness.reverse();
+  console.log('observaciones', observacioness);
+
+  const hasAcepta = acepta.includes('No');
+
+  console.log('detalles', detalles);
 
   return (
     <Layout>
-      <div className="text-2xl">
-        <div className="flex items-center">
-          <h1 className="font-bold">Dia:</h1>
-          <h1 className="pl-4">{cabecera2[0].datenow}</h1>
+      <div className="text-lg">
+        <h2 className="text-2xl font-bold">Dashboard EVCL</h2>
+        <br />
+        <div className="flex items-center justify-center">
+          <h4 className="w-1/2 font-bold">Dia:</h4>
+          <h4 className="w-1/2 pl-8">{cabecera2[0].datenow}</h4>
         </div>
-        <div className="flex items-center">
-          <h1 className="font-bold">Producto:</h1>
-          <h1 className="pl-4">{cabecera2[0].producto}</h1>
+        <br />
+        <div className="flex items-center justify-center">
+          <h4 className="w-1/2 font-bold">Producto:</h4>
+          <h4 className="w-1/2 pl-8">{cabecera2[0].producto}</h4>
         </div>
+        <br />
         <div className="flex items-center">
-          <h1 className="font-bold">Nombre:</h1>
-          <h1 className="pl-4">{cabecera2[0].productoname}</h1>
+          <h4 className="w-1/2 font-bold">Nombre:</h4>
+          <h4 className="w-1/2 pl-8">{cabecera2[0].productoname}</h4>
         </div>
+        <br />
         <div className="flex items-center">
-          <h1 className="font-bold">Tipo lata:</h1>
-          <h1 className="pl-4">{cabecera2[0].tipolata}</h1>
+          <h4 className="w-1/2 font-bold">Tipo lata:</h4>
+          <h4 className="w-1/2 pl-8">{cabecera2[0].tipolata}</h4>
         </div>
-        <div className="flex items-center">
-          <h1 className="font-bold">Registros:</h1>
-          <h1 className="pl-4">{cabecera2[0].cosas.length}</h1>
+        <br />
+        <div className="flex items-center justify-center">
+          <h4 className="font-bold">Registros:</h4>
+          <h4 className="pl-4">{cabecera2[0].cosas.length}</h4>
         </div>
+        <br />
       </div>
       <br />
 
-      {cabecera2[0].cosas.forEach((item) => (
-        <div></div>
-      ))}
-
-      <div className="grid grid-cols-4 gap-3">
-        {/* ancho minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Ancho Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">{EVCLheaders.datenow}</h1>
-            {/* <ProgressBar progressPercentage={anchoMin * 50} /> */}
-            <h1 className="pl-5 text-xs">2</h1>
+      <div className="grid grid-cols-2 gap-5">
+        {/* Cabeza 1 */}
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 1:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo1 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Min Promedio: ${anchoMin}`}</h1> */}
         </div>
         {/* ancho maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Ancho Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={anchoMax * 50} /> */}
-            <h1 className="pl-5 text-xs">2</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 2:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo2 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Max Promedio: ${anchoMax}`}</h1> */}
         </div>
         {/* espesor minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Espesor Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={espesorMin * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 3:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo3 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Max Promedio: ${espesorMin.toFixed(
             3
           )}`}</h1> */}
         </div>
         {/* espesor maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Espesor Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={espesorMax * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 4:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo4 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Max Promedio: ${espesorMax.toFixed(
             3
@@ -186,24 +268,36 @@ export default function ScreenEachDash({
         </div>
 
         {/* profund minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Profun Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={profundMin * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 5:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo5 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Max Promedio: ${profundMin.toFixed(
             3
           )}`}</h1> */}
         </div>
         {/* profund maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Profun Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={profundMax * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Cabeza 6:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasNo6 ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Ancho Max Promedio: ${profundMax.toFixed(
             3
@@ -211,24 +305,73 @@ export default function ScreenEachDash({
         </div>
 
         {/* gancho cuerpo minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanCu Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={ganchocuerpoMin * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Daños:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasDano ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>
+                    ❌ Se presentan daños, consultar.
+                  </span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>
+                    ✅
+                    <br />
+                    No se presentan daños.
+                  </span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMin.toFixed(
             3
           )}`}</h1> */}
         </div>
         {/* gancho cuerpo maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanCu Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={ganchocuerpoMax * 20} /> */}
-            <h1 className="pl-5 text-xs">5</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Estado:
+          <div className="text-lg ">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center">
+                <h2>A: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'A').length}
+                </h2>
+              </div>
+              <div className="flex items-center justify-center pl-4">
+                <h2>B: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'B').length}
+                </h2>
+              </div>
+              <div className="flex items-center justify-center pl-4">
+                <h2>C: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'C').length}
+                </h2>
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center">
+                <h2>D: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'D').length}
+                </h2>
+              </div>
+              <div className="flex items-center justify-center pl-4">
+                <h2>E: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'E').length}
+                </h2>
+              </div>
+              <div className="flex items-center justify-center pl-4">
+                <h2>F: </h2>
+                <h2 className="pl-4">
+                  {estado.filter((x) => x === 'F').length}
+                </h2>
+              </div>
+            </div>
           </div>
           {/* <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMax.toFixed(
             3
@@ -236,105 +379,72 @@ export default function ScreenEachDash({
         </div>
 
         {/* gancho tapa minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanTapa Minima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={ganchotapaMin} /> */}
-            <h1 className="pl-5 text-xs">100</h1>
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Aceptacion:
+          <div className="flex items-center justify-center">
+            {
+              <div>
+                {hasAcepta ? (
+                  <span style={{ color: 'red', fontSize: '24px' }}>❌</span> // X mark
+                ) : (
+                  <span style={{ color: 'green', fontSize: '24px' }}>✅</span> // check mark
+                )}
+              </div>
+            }
           </div>
           {/* <h1 className="text-xs">{`Gancho Tapa Promedio: ${ganchotapaMin.toFixed(
             3
           )}`}</h1> */}
         </div>
         {/* gancho tapa maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          GanTapa Maxima:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={ganchotapaMax} /> */}
-            <h1 className="pl-5 text-xs">100</h1>
-          </div>
-          {/* <h1 className="text-xs">{`Gancho Tapa Promedio: ${ganchotapaMax.toFixed(
-            3
-          )}`}</h1> */}
-        </div>
-        {/* traslape minimo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Traslape Minimo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={traslapeMin * 4} /> */}
-            <h1 className="pl-5 text-xs">25</h1>
-          </div>
-          {/* <h1 className="text-xs">{`Traslape Promedio: ${traslapeMin.toFixed(
-            3
-          )}`}</h1> */}
-        </div>
-        {/* traslape maximo */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          Traslape Maximo:
-          <div className="flex justify-center items-center">
-            <h1 className="pr-5 text-xs">0</h1>
-            {/* <ProgressBar progressPercentage={traslapeMax * 4} /> */}
-            <h1 className="pl-5 text-xs">25</h1>
-          </div>
-          {/* <h1 className="text-xs">{`Traslape Promedio: ${traslapeMax.toFixed(
-            3
-          )}`}</h1> */}
-        </div>
-
-        {/* arrugas */}
-        <div className="rounded px-5 py-10 text-2xl bg-gray-400 text-black ">
-          {/* {`Arrugas: ${arrugas}`} */}
+        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+          Observaciones:
+          {observacioness.length === 0 ? (
+            <h2 className="text-sm text-red-600"> No hay Observaciones.</h2>
+          ) : (
+            <div>
+              <ul className="text-sm text-left text-red-600">
+                {observacioness.map((item) => (
+                  <li key={item} className="text-red-700">
+                    • {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       <div className="pt-10">
-        <div>
-          <ul>
-            {detalles.forEach((element) => (
-              <li>{element}</li>
-            ))}
-          </ul>
-        </div>
         <table>
           <tbody>
             <tr className="text-center">
-              <th>Hora</th>
-              <th>Codigo</th>
-              <th>Ancho Min</th>
-              <th>Ancho Max</th>
-              <th>Espesor Min</th>
-              <th>Espesor Max</th>
-              <th>Profundidad Min</th>
-              <th>Profundidad Max</th>
-              <th>Gancho Cuerpo Min</th>
-              <th>Gancho Cuerpo Max</th>
-              <th>Gancho Tapa Min</th>
-              <th>Gancho Tapa Max</th>
-              <th>Traslape Min</th>
-              <th>Traslape Max</th>
-              <th>Arrugas</th>
-              <th>Banda Impresion</th>
+              <th className="px-2">Hora</th>
+              <th className="px-2">Codigo</th>
+              <th className="px-2">Fabrica Latas</th>
+              <th className="px-2">Cabeza 1</th>
+              <th className="px-2">Cabeza 2</th>
+              <th className="px-2">Cabeza 3</th>
+              <th className="px-2">Cabeza 4</th>
+              <th className="px-2">Cabeza 5</th>
+              <th className="px-2">Cabeza 6</th>
+              <th className="px-2">Daños</th>
+              <th className="px-2">Estado</th>
+              <th className="px-2">Aceptacion</th>
             </tr>
             {detalles.map((element) => (
               <tr key={element.idpropio} className="text-center">
-                <td>{element.horanow}</td>
-                <td>{element.codigo}</td>
-                <td>{element.anchomin}</td>
-                <td>{element.anchomax}</td>
-                <td>{element.espesormin}</td>
-                <td>{element.espesormax}</td>
-                <td>{element.profundmin}</td>
-                <td>{element.profundmax}</td>
-                <td>{element.ganchocuerpomin}</td>
-                <td>{element.ganchocuerpomax}</td>
-                <td>{element.ganchotapamin}</td>
-                <td>{element.ganchotapamax}</td>
-                <td>{element.traslapemin}</td>
-                <td>{element.traslapemax}</td>
-                <td>{element.arrugas}</td>
-                <td>{element.bandaimp}</td>
+                <td className="px-2">{element.horanow}</td>
+                <td className="px-2">{element.codigo}</td>
+                <td className="px-2">{element.fabricalatas}</td>
+                <td className="px-2">{element.cabeza1}</td>
+                <td className="px-2">{element.cabeza2}</td>
+                <td className="px-2">{element.cabeza3}</td>
+                <td className="px-2">{element.cabeza4}</td>
+                <td className="px-2">{element.cabeza5}</td>
+                <td className="px-2">{element.cabeza6}</td>
+                <td className="px-2">{element.danos}</td>
+                <td className="px-2">{element.estado}</td>
+                <td className="px-2">{element.aceptacion}</td>
               </tr>
             ))}
           </tbody>
@@ -352,9 +462,9 @@ export async function getServerSideProps(context) {
 
   const headid = params.id.toString();
 
-  console.log(params.id);
+  console.log(headid);
 
-  const EVCLheaders = await EVCLheader.findOne({ params }).lean();
+  const EVCLheaders = await EVCLheader.findOne({ _id: headid }).lean();
   const EVCLdetails = await EVCLdetail.find({ headid }).lean();
   const MaestroProd = await Maestroprods.find().lean();
   return {
