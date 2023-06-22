@@ -134,7 +134,6 @@ export default function ScreenEachDash({
 
   // Espesor Min
   let espeMin = 0;
-  let espesorMin = 0;
   let arregloEspeMin = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloEspeMin.push(detalles[i].espesormin);
@@ -146,7 +145,6 @@ export default function ScreenEachDash({
 
   // Espesor Max
   let espeMax = 0;
-  let espesorMax = 0;
   let arregloEspeMax = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloEspeMax.push(detalles[i].espesormax);
@@ -158,7 +156,6 @@ export default function ScreenEachDash({
 
   // Profundidad Min
   let profMin = 0;
-  let profundMin = 0;
   let arregloProfMin = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloProfMin.push(detalles[i].profundmin);
@@ -170,7 +167,6 @@ export default function ScreenEachDash({
 
   // Profundidad Max
   let profMax = 0;
-  let profundMax = 0;
   let arregloProfMax = [];
 
   for (let i = 0; i < detalles.length; i++) {
@@ -183,7 +179,6 @@ export default function ScreenEachDash({
 
   // Gancho Cuerpo Min
   let gancuMin = 0;
-  let ganchocuerpoMin = 0;
   let arregloGanCuMin = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloGanCuMin.push(detalles[i].ganchocuerpomin);
@@ -195,7 +190,6 @@ export default function ScreenEachDash({
 
   // Gancho Cuerpo Max
   let gancuMax = 0;
-  let ganchocuerpoMax = 0;
   let arregloGanCuMax = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloGanCuMax.push(detalles[i].ganchocuerpomax);
@@ -207,7 +201,6 @@ export default function ScreenEachDash({
 
   // Gancho Tapa Min
   let gantaMin = 0;
-  let ganchotapaMin = 0;
   let arregloGanTaMin = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloGanTaMin.push(detalles[i].ganchotapamin);
@@ -219,7 +212,6 @@ export default function ScreenEachDash({
 
   // Gancho Tapa Max
   let gantaMax = 0;
-  let ganchotapaMax = 0;
   let arregloGanTaMax = [];
   for (let i = 0; i < detalles.length; i++) {
     arregloGanTaMax.push(detalles[i].ganchotapamax);
@@ -273,13 +265,7 @@ export default function ScreenEachDash({
 
   return (
     <Layout>
-      <div
-        style={{
-          textAlign: 'center',
-          width: '100%',
-          margin: 'auto',
-        }}
-      >
+      <div className="">
         <div className="flex items-center justify-center">
           <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
             <div className="button-borders">
@@ -443,15 +429,13 @@ export default function ScreenEachDash({
           </div>
         </div>
         <div className="pt-10">
-          <div>
-            <ul>
-              {detalles.forEach((element) => (
-                <li>{element}</li>
-              ))}
-            </ul>
-          </div>
           <table>
-            <tbody>
+            <tbody
+              style={{
+                overflow: 'scroll',
+                display: 'block',
+              }}
+            >
               <tr className="text-center">
                 <th>Hora</th>
                 <th>Codigo</th>

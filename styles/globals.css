@@ -8,6 +8,13 @@ body {
   font-family: sans-serif;
 }
 
+.layout {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .circle-background {
   fill: none;
   stroke: #ddd;
