@@ -8,6 +8,7 @@ import { Controller, useForm, useFormContext } from 'react-hook-form';
 import Select from 'react-select';
 import axios from 'axios';
 import EDDCLdetail from '../../../models/EDDCLdetail';
+import Link from 'next/link';
 
 export default function klk(props) {
   const router = useRouter();
@@ -152,6 +153,14 @@ export default function klk(props) {
 
   return (
     <Layout>
+      <div className="flex items-center justify-center">
+        <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
+          <div className="button-borders">
+            <button className="primary-button">Ver Version Fisica</button>
+          </div>
+        </Link>
+      </div>
+      <br />
       <div className="flex justify-center">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
           <h1 className="py-2 text-2xl font-bold text-center">

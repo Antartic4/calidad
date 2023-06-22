@@ -5,6 +5,7 @@ import db from '../../../../utils/connectMongo';
 import Layout from '../../../../src/components/Layout';
 import EVCLheader from '../../../../models/EVCLheader';
 import EVCLdetail from '../../../../models/EVCLdetail';
+import Link from 'next/link';
 
 export default function ScreenEachDash({
   EVCLheaders,
@@ -162,10 +163,16 @@ export default function ScreenEachDash({
 
   const hasAcepta = acepta.includes('No');
 
-  console.log('detalles', detalles);
-
   return (
     <Layout>
+      <div className="flex items-center justify-center">
+        <Link href="https://i.ibb.co/gRvS3np/evcl.png">
+          <div className="button-borders">
+            <button className="primary-button">Ver Version Fisica</button>
+          </div>
+        </Link>
+      </div>
+      <br />
       <div className="text-lg">
         <h2 className="text-2xl font-bold">Dashboard EVCL</h2>
         <br />

@@ -7,6 +7,7 @@ import db from '../../../../utils/connectMongo';
 import Layout from '../../../../src/components/Layout';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+import Link from 'next/link';
 
 export default function ScreenEachDash({
   EDDCLheaders,
@@ -111,83 +112,122 @@ export default function ScreenEachDash({
 
   // Ancho Min
   let anchMin = 0;
-  let anchoMin = 0;
+  let arregloAnchoMin = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloAnchoMin.push(detalles[i].anchomin);
     anchMin += detalles[i].anchomin;
   }
-  anchoMin = anchMin / detalles.length;
+  let anchoMinProm = anchMin / detalles.length;
+  let anchoMinMin = Math.min.apply(Math, arregloAnchoMin);
+  let anchoMinMax = Math.max.apply(Math, arregloAnchoMin);
 
   // Ancho Max
   let anchMax = 0;
-  let anchoMax = 0;
+  let arregloAnchoMax = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloAnchoMax.push(detalles[i].anchomax);
     anchMax += detalles[i].anchomax;
   }
-  anchoMax = anchMax / detalles.length;
+  let anchoMaxProm = anchMax / detalles.length;
+  let anchoMaxMin = Math.min.apply(Math, arregloAnchoMax);
+  let anchoMaxMax = Math.max.apply(Math, arregloAnchoMax);
 
   // Espesor Min
   let espeMin = 0;
   let espesorMin = 0;
+  let arregloEspeMin = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloEspeMin.push(detalles[i].espesormin);
     espeMin += detalles[i].espesormin;
   }
-  espesorMin = espeMin / detalles.length;
+  let espesorMinProm = espeMin / detalles.length;
+  let espesorMinMin = Math.min.apply(Math, arregloEspeMin);
+  let espesorMinMax = Math.max.apply(Math, arregloEspeMin);
 
   // Espesor Max
   let espeMax = 0;
   let espesorMax = 0;
+  let arregloEspeMax = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloEspeMax.push(detalles[i].espesormax);
     espeMax += detalles[i].espesormax;
   }
-  espesorMax = espeMax / detalles.length;
+  let espesorMaxProm = espeMax / detalles.length;
+  let espesorMaxMin = Math.min.apply(Math, arregloEspeMax);
+  let espesorMaxMax = Math.max.apply(Math, arregloEspeMax);
 
   // Profundidad Min
   let profMin = 0;
   let profundMin = 0;
+  let arregloProfMin = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloProfMin.push(detalles[i].profundmin);
     profMin += detalles[i].profundmin;
   }
-  profundMin = profMin / detalles.length;
+  let profMinProm = profMin / detalles.length;
+  let profMinMin = Math.min.apply(Math, arregloProfMin);
+  let profMinMax = Math.max.apply(Math, arregloProfMin);
 
   // Profundidad Max
   let profMax = 0;
   let profundMax = 0;
+  let arregloProfMax = [];
+
   for (let i = 0; i < detalles.length; i++) {
+    arregloProfMax.push(detalles[i].profundmax);
     profMax += detalles[i].profundmax;
   }
-  profundMax = profMax / detalles.length;
+  let profMaxProm = profMax / detalles.length;
+  let profMaxMin = Math.min.apply(Math, arregloProfMax);
+  let profMaxMax = Math.max.apply(Math, arregloProfMax);
 
   // Gancho Cuerpo Min
   let gancuMin = 0;
   let ganchocuerpoMin = 0;
+  let arregloGanCuMin = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloGanCuMin.push(detalles[i].ganchocuerpomin);
     gancuMin += detalles[i].ganchocuerpomin;
   }
-  ganchocuerpoMin = gancuMin / detalles.length;
+  let ganCuMinProm = gancuMin / detalles.length;
+  let ganCuMinMin = Math.min.apply(Math, arregloGanCuMin);
+  let ganCuMinMax = Math.max.apply(Math, arregloGanCuMin);
 
   // Gancho Cuerpo Max
   let gancuMax = 0;
   let ganchocuerpoMax = 0;
+  let arregloGanCuMax = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloGanCuMax.push(detalles[i].ganchocuerpomax);
     gancuMax += detalles[i].ganchocuerpomax;
   }
-  ganchocuerpoMax = gancuMax / detalles.length;
+  let ganCuMaxProm = gancuMax / detalles.length;
+  let ganCuMaxMin = Math.min.apply(Math, arregloGanCuMax);
+  let ganCuMaxMax = Math.max.apply(Math, arregloGanCuMax);
 
   // Gancho Tapa Min
   let gantaMin = 0;
   let ganchotapaMin = 0;
+  let arregloGanTaMin = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloGanTaMin.push(detalles[i].ganchotapamin);
     gantaMin += detalles[i].ganchotapamin;
   }
-  ganchotapaMin = gantaMin / detalles.length;
+  let ganTaMinProm = gantaMin / detalles.length;
+  let ganTaMinMin = Math.min.apply(Math, arregloGanTaMin);
+  let ganTaMinMax = Math.max.apply(Math, arregloGanTaMin);
 
   // Gancho Tapa Max
   let gantaMax = 0;
   let ganchotapaMax = 0;
+  let arregloGanTaMax = [];
   for (let i = 0; i < detalles.length; i++) {
+    arregloGanTaMax.push(detalles[i].ganchotapamax);
     gantaMax += detalles[i].ganchotapamax;
   }
-  ganchotapaMax = gantaMax / detalles.length;
+  let ganTaMaxProm = gantaMax / detalles.length;
+  let ganTaMaxMin = Math.min.apply(Math, arregloGanTaMin);
+  let ganTaMaxMax = Math.max.apply(Math, arregloGanTaMin);
 
   // Traslape Min
   let trasMin = 0;
@@ -233,163 +273,142 @@ export default function ScreenEachDash({
 
   return (
     <Layout>
+      <div className="flex items-center justify-center">
+        <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
+          <div className="button-borders">
+            <button className="primary-button">Ver Version Fisica</button>
+          </div>
+        </Link>
+      </div>
+      <br />
       <div>
         <h1 className="text-2xl font-bold">Averages</h1>
       </div>
       <br />
       <div>
-        <h1 className="text-lg">Ancho:</h1>
+        <h1 className="text-xl font-bold">Ancho:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
         {/* ancho minimo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Minimo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">110</h1>
-            <ProgressBar progressPercentage={(anchoMin - 100) * (10 / 3)} />
-            <h1 className="pl-5 text-xs">120</h1>
-          </div>
-          <h1 className="text-xs">{`Minimo Promedio: ${anchoMin.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${anchoMinProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${anchoMinMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${anchoMinMax.toFixed(2)}`}</h1>
         </div>
         {/* ancho maximo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Maximo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">110</h1>
-            <ProgressBar progressPercentage={(anchoMax - 100) * (10 / 3)} />
-            <h1 className="pl-5 text-xs">120</h1>
-          </div>
-          <h1 className="text-xs">{`Maximo Promedio: ${anchoMax.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${anchoMaxProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${anchoMaxMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${anchoMaxMax.toFixed(2)}`}</h1>
         </div>
       </div>
       <div>
         <br />
-        <h1 className="text-lg">Espesor:</h1>
+        <h1 className="text-xl font-bold">Espesor:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
         {/* espesor minimo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Minimo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">40</h1>
-            <ProgressBar progressPercentage={(espesorMin - 40) * 20} />
-            <h1 className="pl-5 text-xs">45</h1>
-          </div>
-          <h1 className="text-xs">{`Ancho Max Promedio: ${espesorMin.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${espesorMinProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${espesorMinMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${espesorMinMax.toFixed(2)}`}</h1>
         </div>
         {/* espesor maximo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Maximo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">40</h1>
-            <ProgressBar progressPercentage={(espesorMax - 40) * 20} />
-            <h1 className="pl-5 text-xs">45</h1>
-          </div>
-          <h1 className="text-xs">{`Maximo Promedio: ${espesorMax.toFixed(
+          <h1 className="text-xs">{`Maximo Promedio: ${espesorMaxProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${espesorMaxMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${espesorMaxMax.toFixed(2)}`}</h1>
         </div>
       </div>
       {/* profund minimo */}
       <div>
         <br />
-        <h1 className="text-lg">Profundidad:</h1>
+        <h1 className="text-xl font-bold">Profundidad:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Minimo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">135</h1>
-            <ProgressBar progressPercentage={(profundMin - 135) * 20} />
-            <h1 className="pl-5 text-xs">140</h1>
-          </div>
-          <h1 className="text-xs">{`Minimo Promedio: ${profundMin.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${profMinProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${profMinMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${profMinMax.toFixed(2)}`}</h1>
         </div>
         {/* profund maximo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Maximo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">135</h1>
-            <ProgressBar progressPercentage={(profundMax - 135) * 20} />
-            <h1 className="pl-5 text-xs">140</h1>
-          </div>
-          <h1 className="text-xs">{`Maximo Promedio: ${profundMax.toFixed(
+          <h1 className="text-xs">{`Maximo Promedio: ${profMaxProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${profMaxMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${profMaxMax.toFixed(2)}`}</h1>
         </div>
       </div>
       {/* gancho cuerpo minimo */}
       <div>
         <br />
-        <h1 className="text-lg">Gancho Cuerpo:</h1>
+        <h1 className="text-xl font-bold">Gancho Cuerpo:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
-        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Minimo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">75</h1>
-            <ProgressBar progressPercentage={(ganchocuerpoMin - 75) * 20} />
-            <h1 className="pl-5 text-xs">80</h1>
-          </div>
-          <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMin.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${ganCuMinProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${ganCuMinMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${ganCuMinMax.toFixed(2)}`}</h1>
         </div>
-        {/* gancho cuerpo maximo */}
-        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+        {/* profund maximo */}
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Maximo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">75</h1>
-            <ProgressBar progressPercentage={(ganchocuerpoMax - 75) * 20} />
-            <h1 className="pl-5 text-xs">80</h1>
-          </div>
-          <h1 className="text-xs">{`Gancho Cuerpo Promedio: ${ganchocuerpoMax.toFixed(
+          <h1 className="text-xs">{`Maximo Promedio: ${ganCuMaxProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${ganCuMaxMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${ganCuMaxMax.toFixed(2)}`}</h1>
         </div>
       </div>
       {/* gancho tapa minimo */}
       <div>
         <br />
-        <h1 className="text-lg">Gancho Tapa:</h1>
+        <h1 className="text-xl font-bold">Gancho Tapa:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
+        {/* gancho tapa maximo */}
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Minimo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">65</h1>
-            <ProgressBar progressPercentage={(ganchotapaMin - 65) * 20} />
-            <h1 className="pl-5 text-xs">70</h1>
-          </div>
-          <h1 className="text-xs">{`Minimo Promedio: ${ganchotapaMin.toFixed(
+          <h1 className="text-xs">{`Minimo Promedio: ${ganTaMinProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${ganTaMinMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${ganTaMinMax.toFixed(2)}`}</h1>
         </div>
-        {/* gancho tapa maximo */}
-        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+        {/* espesor maximo */}
+        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
           Maximo:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">65</h1>
-            <ProgressBar progressPercentage={(ganchotapaMax - 65) * 20} />
-            <h1 className="pl-5 text-xs">70</h1>
-          </div>
-          <h1 className="text-xs">{`Maximo Promedio: ${ganchotapaMax.toFixed(
+          <h1 className="text-xs">{`Maximo Promedio: ${ganTaMaxProm.toFixed(
             2
           )}`}</h1>
+          <h1 className="text-xs">{`Minimo: ${ganTaMaxMin.toFixed(2)}`}</h1>
+          <h1 className="text-xs">{`Maximo: ${ganTaMaxMax.toFixed(2)}`}</h1>
         </div>
       </div>
       {/* traslape minimo */}
       <div>
         <br />
-        <h1 className="text-lg">Traslape + Arrugas:</h1>
+        <h1 className="text-xl font-bold">Traslape + Arrugas:</h1>
       </div>
       <div className="grid grid-cols-2 gap-5">
         <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
@@ -407,17 +426,13 @@ export default function ScreenEachDash({
         {/* arrugas */}
         <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
           {arrugas === 0 ? (
-            <>
-              <div className="py-3 bg-green-500 rounded-lg">
-                {`Arrugas: ${arrugas}`}
-              </div>
-            </>
+            <span class="bg-green-300 text-green-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-green-900 dark:text-green-300">
+              Arrugas: {arrugas}
+            </span>
           ) : (
-            <>
-              <div className="py-3 bg-red-600 rounded-lg ">
-                {`Arrugas: ${arrugas}`}
-              </div>
-            </>
+            <span class="bg-red-300 text-red-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-red-900 dark:text-red-300">
+              Arrugas: {arrugas}
+            </span>
           )}
         </div>
       </div>

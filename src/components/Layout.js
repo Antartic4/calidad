@@ -125,10 +125,10 @@ export default function Layout({ title, children }) {
                       </ListItem>
                       <Divider light />
                       <Box>
-                        <div className="px-3 text-center py-3 font-bold hover:bg-gray-200">
+                        <div className="px-3 py-3 font-bold text-center hover:bg-gray-200">
                           <Link href="/">{nav_home}</Link>
                         </div>
-                        <div className="px-3 py-3 text-center font-bold hover:bg-gray-200">
+                        <div className="px-3 py-3 font-bold text-center hover:bg-gray-200">
                           <Link href="/aboutus">
                             {router.locale === 'en'
                               ? 'About Us'
@@ -136,7 +136,7 @@ export default function Layout({ title, children }) {
                           </Link>
                         </div>
                         <Divider light />
-                        <div className="px-3 py-3 text-center font-bold disabled hover:bg-gray-200">
+                        <div className="px-3 py-3 font-bold text-center disabled hover:bg-gray-200">
                           Profile(En Construccion)
                         </div>
                         <Divider light />
@@ -145,34 +145,23 @@ export default function Layout({ title, children }) {
                   </Drawer>
                 </div>
                 <div className="flex items-center">
-                  <button onClick={sidebarOpenHandler} className="mr-5">
-                    <a className="px-4">
-                      <Link legacyBehavior href="/">
-                        <Image
-                          src={logofamosa}
-                          className="flex shrink-0"
-                          alt="improved-l-1"
-                          border="0"
-                          width={100}
-                          height={75}
-                        />
-                      </Link>
-                    </a>
-                  </button>
+                  <a className="px-4">
+                    <Link legacyBehavior href="/">
+                      <Image
+                        src={logofamosa}
+                        className="flex shrink-0"
+                        alt="improved-l-1"
+                        border="0"
+                        width={100}
+                        height={75}
+                      />
+                    </Link>
+                  </a>
                   <div className="">
                     <Link href="/">
-                      <buttton className="font-bold shrink">
-                        {router.locale === 'en' ? (
-                          <div className="md:flex text-2xl">
-                            <h4 className="text-left shrink">La Famosa v.01</h4>
-                          </div>
-                        ) : (
-                          <div className="md:flex text-xl">
-                            <h4 className="text-left shrink">La Famosa</h4>
-                            <h4 className="text-left shrink md:pl-5">v.01</h4>
-                          </div>
-                        )}
-                      </buttton>
+                      <div className="text-2xl md:flex">
+                        <h4 className="text-left shrink">La Famosa v.01</h4>
+                      </div>
                     </Link>
                   </div>
                 </div>
@@ -184,7 +173,7 @@ export default function Layout({ title, children }) {
                         <div>Formularios</div>
                       </Link>
                     </li>
-                    <li className="px-3 py-3 text-center items-center hover:bg-gray-200">
+                    <li className="items-center px-3 py-3 text-center hover:bg-gray-200">
                       <Link legacyBehavior href="/aboutus">
                         <div>Sobre Nosotros</div>
                       </Link>
@@ -196,7 +185,7 @@ export default function Layout({ title, children }) {
           </div>
         </header>
         <main className="container px-4 m-auto mt-4">{children}</main>
-        <footer className="text-center pt-3 items-center justify-center h-20 shadow-inner">
+        <footer className="items-center justify-center h-20 pt-3 text-center shadow-inner">
           <p>Copyright © 2022 Peravia Industrial S.A.</p>
         </footer>
       </div>

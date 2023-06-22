@@ -127,6 +127,14 @@ export default function ScreenEDDCL({
 
   return (
     <Layout>
+      <div className="flex items-center justify-center">
+        <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
+          <div className="button-borders">
+            <button className="primary-button">Ver Version Fisica</button>
+          </div>
+        </Link>
+      </div>
+      <br />
       <div>
         <h1 className="text-2xl font-bold">Totales:</h1>
         <br />

@@ -16,9 +16,6 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
 
   const sortedEHeaders = EVCLheaders.reverse();
 
-  //console.log(EDDCLheaders);
-  //console.log(sortedEHeaders);
-
   const productos = JSON.parse(maestroprods);
 
   //tipo lata (limpiar lo que pude)
@@ -223,6 +220,13 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
 
   return (
     <Layout>
+      <div className="flex items-center justify-center">
+        <Link href="https://i.ibb.co/gRvS3np/evcl.png">
+          <div className="button-borders">
+            <button className="primary-button">Ver Version Fisica</button>
+          </div>
+        </Link>
+      </div>
       <div className="flex justify-center h-screen bg-white ">
         <div className="relative top-36 w-72 ">
           <div className="">
@@ -287,26 +291,29 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
           <Link
             key={EVCLheader._id}
             href={`/formularios/evcl/${EVCLheader._id}`}
+            className="bg-gray-100"
           >
-            <div className="py-2 border border-black rounded-lg">
-              <div className="flex justify-center object-cover pt-2 px-auto">
-                {EVCLheader._id}
+            <button id="notabutton" className="w-full h-full">
+              <div className="py-2 border border-black rounded-lg">
+                <div className="flex justify-center object-cover pt-2 px-auto">
+                  {EVCLheader._id}
+                </div>
+                <div className="p-5">
+                  <div className="flex justify-between">
+                    <p className="mb-2 font-bold text-left">Fecha: </p>
+                    <p className="ml-5 text-right">{EVCLheader.datenow}</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="mb-2 font-bold text-left">Tipo de Lata: </p>
+                    <p className="ml-5 text-right">{EVCLheader.tipolata}</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="mb-2 font-bold text-left">Producto ID: </p>
+                    <p className="ml-5 text-right">{EVCLheader.producto}</p>
+                  </div>
+                </div>
               </div>
-              <div className="p-5">
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Fecha: </p>
-                  <p className="ml-5 text-right">{EVCLheader.datenow}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Tipo de Lata: </p>
-                  <p className="ml-5 text-right">{EVCLheader.tipolata}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Producto ID: </p>
-                  <p className="ml-5 text-right">{EVCLheader.producto}</p>
-                </div>
-              </div>
-            </div>
+            </button>
           </Link>
         ))}
       </div>

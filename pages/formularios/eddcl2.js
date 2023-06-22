@@ -232,8 +232,15 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
       <div className="flex justify-center h-screen bg-white ">
         <div className="relative w-full top-36 ">
           <div className="">
+            <div className="flex items-center justify-center">
+              <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
+                <div className="button-borders">
+                  <button className="primary-button">Ver Version Fisica</button>
+                </div>
+              </Link>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <h1 className="pb-5 text-2xl font-bold">
+              <h1 className="py-5 text-2xl font-bold">
                 Examen Destructivo Cierre de Latas
               </h1>
               <h1 className="text-lg font-bold">&apos;Header&apos;</h1>
