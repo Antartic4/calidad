@@ -97,10 +97,13 @@ export default function ScreenEachDash({
   // arreglo de datos a comparar
   let datos = [];
 
-  let comentarios = [];
-  detalles.forEach((element) => {
-    comentarios.push(element.comentarios);
-  });
+  const comentarios = [];
+
+  for (let i = 0; i < detalles.length; i++) {
+    if (detalles[i].observaciones.length > 1) {
+      comentarios.push(detalles[i].observaciones);
+    }
+  }
 
   const textorojo = (
     <>
@@ -421,41 +424,84 @@ export default function ScreenEachDash({
           )}
         </div>
       </div>
-      <div className="pt-10">
-        <table>
-          <tbody>
-            <tr className="text-center">
-              <th className="px-2">Hora</th>
-              <th className="px-2">Codigo</th>
-              <th className="px-2">Fabrica Latas</th>
-              <th className="px-2">Cabeza 1</th>
-              <th className="px-2">Cabeza 2</th>
-              <th className="px-2">Cabeza 3</th>
-              <th className="px-2">Cabeza 4</th>
-              <th className="px-2">Cabeza 5</th>
-              <th className="px-2">Cabeza 6</th>
-              <th className="px-2">Daños</th>
-              <th className="px-2">Estado</th>
-              <th className="px-2">Aceptacion</th>
-            </tr>
-            {detalles.map((element) => (
-              <tr key={element.idpropio} className="text-center">
-                <td className="px-2">{element.horanow}</td>
-                <td className="px-2">{element.codigo}</td>
-                <td className="px-2">{element.fabricalatas}</td>
-                <td className="px-2">{element.cabeza1}</td>
-                <td className="px-2">{element.cabeza2}</td>
-                <td className="px-2">{element.cabeza3}</td>
-                <td className="px-2">{element.cabeza4}</td>
-                <td className="px-2">{element.cabeza5}</td>
-                <td className="px-2">{element.cabeza6}</td>
-                <td className="px-2">{element.danos}</td>
-                <td className="px-2">{element.estado}</td>
-                <td className="px-2">{element.aceptacion}</td>
+      <div>
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Head-ID
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Hora
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Codigo
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Fabrica Latas
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #1
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #2
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #3
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #4
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #5
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Cabeza #6
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Daños
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Estado
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Aceptacion
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {detalles.map((item) => (
+                <tr
+                  key={item.headid}
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <td className="text-center">{item.horanow}</td>
+                  <td className="text-center">{item.codigo}</td>
+
+                  <td className="text-center">{item.fabricalatas}</td>
+
+                  <td className="text-center">{item.cabeza1}</td>
+                  <td className="text-center">{item.cabeza2}</td>
+                  <td className="text-center">{item.cabeza3}</td>
+                  <td className="text-center">{item.cabeza4}</td>
+                  <td className="text-center">{item.cabeza5}</td>
+                  <td className="text-center">{item.cabeza6}</td>
+                  <td className="text-center">{item.danos}</td>
+                  <td className="text-center">{item.estado}</td>
+                  <td className="text-center">{item.aceptacion}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="pt-4 bg-white">
+        {comentarios.map((item) => (
+          <h1 className="text-lg text-left text-red-600" key={item}>
+            • - {item}
+          </h1>
+        ))}
       </div>
     </Layout>
   );

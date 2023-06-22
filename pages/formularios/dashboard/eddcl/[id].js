@@ -428,59 +428,129 @@ export default function ScreenEachDash({
             )}
           </div>
         </div>
-        <div className="pt-10">
-          <table
-            style={{
-              overflow: 'scroll',
-              display: 'box',
-            }}
-          >
-            <tbody
-              style={{
-                overflow: 'scroll',
-                display: 'box',
-              }}
-            >
-              <tr className="text-center">
-                <th>Hora</th>
-                <th>Codigo</th>
-                <th>Ancho Min</th>
-                <th>Ancho Max</th>
-                <th>Espesor Min</th>
-                <th>Espesor Max</th>
-                <th>Profundidad Min</th>
-                <th>Profundidad Max</th>
-                <th>Gancho Cuerpo Min</th>
-                <th>Gancho Cuerpo Max</th>
-                <th>Gancho Tapa Min</th>
-                <th>Gancho Tapa Max</th>
-                <th>Traslape Min</th>
-                <th>Traslape Max</th>
-                <th>Arrugas</th>
-                <th>Banda Impresion</th>
-              </tr>
-              {detalles.map((element) => (
-                <tr key={element.idpropio} className="text-center">
-                  <td>{element.horanow}</td>
-                  <td>{element.codigo}</td>
-                  <td>{element.anchomin}</td>
-                  <td>{element.anchomax}</td>
-                  <td>{element.espesormin}</td>
-                  <td>{element.espesormax}</td>
-                  <td>{element.profundmin}</td>
-                  <td>{element.profundmax}</td>
-                  <td>{element.ganchocuerpomin}</td>
-                  <td>{element.ganchocuerpomax}</td>
-                  <td>{element.ganchotapamin}</td>
-                  <td>{element.ganchotapamax}</td>
-                  <td>{element.traslapemin}</td>
-                  <td>{element.traslapemax}</td>
-                  <td>{element.arrugas}</td>
-                  <td>{element.bandaimp}</td>
+        <div>
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" className="px-6 py-3">
+                    Head-ID
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Hora
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Codigo
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Cabeza
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Ancho
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Espesor
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Profundidad
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Gancho Cuerpo
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Gancho Tapa
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-center">
+                    Traslape
+                    <div className="flex justify-evenly">
+                      <div>Min</div>
+                      <div>Max</div>
+                    </div>
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Arrugas
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Banda Impresion
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Fabrica Lata
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {detalles.map((item) => (
+                  <tr
+                    key={item.headid}
+                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <td className="text-center">{item.horanow}</td>
+                    <td className="text-center">{item.codigo}</td>
+                    <td className="text-center">{item.cabeza}</td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.anchomin}</div>
+                        <div>{item.anchomax}</div>
+                      </div>
+                    </td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.espesormin}</div>
+                        <div>{item.espesormax}</div>
+                      </div>
+                    </td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.profundmin}</div>
+                        <div>{item.profundmax}</div>
+                      </div>
+                    </td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.ganchocuerpomin}</div>
+                        <div>{item.ganchocuerpomax}</div>
+                      </div>
+                    </td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.ganchotapamin}</div>
+                        <div>{item.ganchotapamax}</div>
+                      </div>
+                    </td>
+                    <td className="">
+                      <div className="flex justify-evenly">
+                        <div>{item.traslapemin}</div>
+                        <div>{item.traslapemax}</div>
+                      </div>
+                    </td>
+                    <td className="text-center">{item.arrugas}</td>
+                    <td className="text-center">{item.bandaimp}</td>
+                    <td className="text-center">{item.fabricalatas}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </Layout>
