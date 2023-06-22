@@ -429,11 +429,16 @@ export default function ScreenEachDash({
           </div>
         </div>
         <div className="pt-10">
-          <table>
+          <table
+            style={{
+              overflow: 'scroll',
+              display: 'box',
+            }}
+          >
             <tbody
               style={{
                 overflow: 'scroll',
-                display: 'block',
+                display: 'box',
               }}
             >
               <tr className="text-center">
