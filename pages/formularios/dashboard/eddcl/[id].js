@@ -273,219 +273,226 @@ export default function ScreenEachDash({
 
   return (
     <Layout>
-      <div className="flex items-center justify-center">
-        <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
-          <div className="button-borders">
-            <button className="primary-button">Ver Version Fisica</button>
-          </div>
-        </Link>
-      </div>
-      <br />
-      <div>
-        <h1 className="text-2xl font-bold">Averages</h1>
-      </div>
-      <br />
-      <div>
-        <h1 className="text-xl font-bold">Ancho:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        {/* ancho minimo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Minimo:
-          <h1 className="text-xs">{`Minimo Promedio: ${anchoMinProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${anchoMinMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${anchoMinMax.toFixed(2)}`}</h1>
+      <div
+        style={{
+          textAlign: 'center',
+          width: '100%',
+          margin: 'auto',
+        }}
+      >
+        <div className="flex items-center justify-center">
+          <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
+            <div className="button-borders">
+              <button className="primary-button">Ver Version Fisica</button>
+            </div>
+          </Link>
         </div>
-        {/* ancho maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Maximo:
-          <h1 className="text-xs">{`Minimo Promedio: ${anchoMaxProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${anchoMaxMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${anchoMaxMax.toFixed(2)}`}</h1>
-        </div>
-      </div>
-      <div>
         <br />
-        <h1 className="text-xl font-bold">Espesor:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        {/* espesor minimo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Minimo:
-          <h1 className="text-xs">{`Minimo Promedio: ${espesorMinProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${espesorMinMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${espesorMinMax.toFixed(2)}`}</h1>
-        </div>
-        {/* espesor maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Maximo:
-          <h1 className="text-xs">{`Maximo Promedio: ${espesorMaxProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${espesorMaxMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${espesorMaxMax.toFixed(2)}`}</h1>
-        </div>
-      </div>
-      {/* profund minimo */}
-      <div>
-        <br />
-        <h1 className="text-xl font-bold">Profundidad:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Minimo:
-          <h1 className="text-xs">{`Minimo Promedio: ${profMinProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${profMinMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${profMinMax.toFixed(2)}`}</h1>
-        </div>
-        {/* profund maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Maximo:
-          <h1 className="text-xs">{`Maximo Promedio: ${profMaxProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${profMaxMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${profMaxMax.toFixed(2)}`}</h1>
-        </div>
-      </div>
-      {/* gancho cuerpo minimo */}
-      <div>
-        <br />
-        <h1 className="text-xl font-bold">Gancho Cuerpo:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Minimo:
-          <h1 className="text-xs">{`Minimo Promedio: ${ganCuMinProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${ganCuMinMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${ganCuMinMax.toFixed(2)}`}</h1>
-        </div>
-        {/* profund maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Maximo:
-          <h1 className="text-xs">{`Maximo Promedio: ${ganCuMaxProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${ganCuMaxMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${ganCuMaxMax.toFixed(2)}`}</h1>
-        </div>
-      </div>
-      {/* gancho tapa minimo */}
-      <div>
-        <br />
-        <h1 className="text-xl font-bold">Gancho Tapa:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        {/* gancho tapa maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Minimo:
-          <h1 className="text-xs">{`Minimo Promedio: ${ganTaMinProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${ganTaMinMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${ganTaMinMax.toFixed(2)}`}</h1>
-        </div>
-        {/* espesor maximo */}
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Maximo:
-          <h1 className="text-xs">{`Maximo Promedio: ${ganTaMaxProm.toFixed(
-            2
-          )}`}</h1>
-          <h1 className="text-xs">{`Minimo: ${ganTaMaxMin.toFixed(2)}`}</h1>
-          <h1 className="text-xs">{`Maximo: ${ganTaMaxMax.toFixed(2)}`}</h1>
-        </div>
-      </div>
-      {/* traslape minimo */}
-      <div>
-        <br />
-        <h1 className="text-xl font-bold">Traslape + Arrugas:</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5">
-        <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
-          Traslape:
-          <div className="flex items-center justify-center">
-            <h1 className="pr-5 text-xs">40</h1>
-            <ProgressBar progressPercentage={(traslapeMin - 40) * 10} />
-            <h1 className="pl-5 text-xs">50</h1>
-          </div>
-          <h1 className="text-xs">{`Traslape Promedio: ${traslapeMin.toFixed(
-            3
-          )}`}</h1>
-        </div>
-
-        {/* arrugas */}
-        <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
-          {arrugas === 0 ? (
-            <span class="bg-green-300 text-green-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-green-900 dark:text-green-300">
-              Arrugas: {arrugas}
-            </span>
-          ) : (
-            <span class="bg-red-300 text-red-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-red-900 dark:text-red-300">
-              Arrugas: {arrugas}
-            </span>
-          )}
-        </div>
-      </div>
-      <div className="pt-10">
         <div>
-          <ul>
-            {detalles.forEach((element) => (
-              <li>{element}</li>
-            ))}
-          </ul>
+          <h1 className="text-2xl font-bold">Averages</h1>
         </div>
-        <table>
-          <tbody>
-            <tr className="text-center">
-              <th>Hora</th>
-              <th>Codigo</th>
-              <th>Ancho Min</th>
-              <th>Ancho Max</th>
-              <th>Espesor Min</th>
-              <th>Espesor Max</th>
-              <th>Profundidad Min</th>
-              <th>Profundidad Max</th>
-              <th>Gancho Cuerpo Min</th>
-              <th>Gancho Cuerpo Max</th>
-              <th>Gancho Tapa Min</th>
-              <th>Gancho Tapa Max</th>
-              <th>Traslape Min</th>
-              <th>Traslape Max</th>
-              <th>Arrugas</th>
-              <th>Banda Impresion</th>
-            </tr>
-            {detalles.map((element) => (
-              <tr key={element.idpropio} className="text-center">
-                <td>{element.horanow}</td>
-                <td>{element.codigo}</td>
-                <td>{element.anchomin}</td>
-                <td>{element.anchomax}</td>
-                <td>{element.espesormin}</td>
-                <td>{element.espesormax}</td>
-                <td>{element.profundmin}</td>
-                <td>{element.profundmax}</td>
-                <td>{element.ganchocuerpomin}</td>
-                <td>{element.ganchocuerpomax}</td>
-                <td>{element.ganchotapamin}</td>
-                <td>{element.ganchotapamax}</td>
-                <td>{element.traslapemin}</td>
-                <td>{element.traslapemax}</td>
-                <td>{element.arrugas}</td>
-                <td>{element.bandaimp}</td>
+        <br />
+        <div>
+          <h1 className="text-xl font-bold">Ancho:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          {/* ancho minimo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Minimo:
+            <h1 className="text-xs">{`Minimo Promedio: ${anchoMinProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${anchoMinMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${anchoMinMax.toFixed(2)}`}</h1>
+          </div>
+          {/* ancho maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Maximo:
+            <h1 className="text-xs">{`Minimo Promedio: ${anchoMaxProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${anchoMaxMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${anchoMaxMax.toFixed(2)}`}</h1>
+          </div>
+        </div>
+        <div>
+          <br />
+          <h1 className="text-xl font-bold">Espesor:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          {/* espesor minimo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Minimo:
+            <h1 className="text-xs">{`Minimo Promedio: ${espesorMinProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${espesorMinMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${espesorMinMax.toFixed(2)}`}</h1>
+          </div>
+          {/* espesor maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Maximo:
+            <h1 className="text-xs">{`Maximo Promedio: ${espesorMaxProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${espesorMaxMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${espesorMaxMax.toFixed(2)}`}</h1>
+          </div>
+        </div>
+        {/* profund minimo */}
+        <div>
+          <br />
+          <h1 className="text-xl font-bold">Profundidad:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Minimo:
+            <h1 className="text-xs">{`Minimo Promedio: ${profMinProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${profMinMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${profMinMax.toFixed(2)}`}</h1>
+          </div>
+          {/* profund maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Maximo:
+            <h1 className="text-xs">{`Maximo Promedio: ${profMaxProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${profMaxMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${profMaxMax.toFixed(2)}`}</h1>
+          </div>
+        </div>
+        {/* gancho cuerpo minimo */}
+        <div>
+          <br />
+          <h1 className="text-xl font-bold">Gancho Cuerpo:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Minimo:
+            <h1 className="text-xs">{`Minimo Promedio: ${ganCuMinProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${ganCuMinMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${ganCuMinMax.toFixed(2)}`}</h1>
+          </div>
+          {/* profund maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Maximo:
+            <h1 className="text-xs">{`Maximo Promedio: ${ganCuMaxProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${ganCuMaxMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${ganCuMaxMax.toFixed(2)}`}</h1>
+          </div>
+        </div>
+        {/* gancho tapa minimo */}
+        <div>
+          <br />
+          <h1 className="text-xl font-bold">Gancho Tapa:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          {/* gancho tapa maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Minimo:
+            <h1 className="text-xs">{`Minimo Promedio: ${ganTaMinProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${ganTaMinMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${ganTaMinMax.toFixed(2)}`}</h1>
+          </div>
+          {/* espesor maximo */}
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Maximo:
+            <h1 className="text-xs">{`Maximo Promedio: ${ganTaMaxProm.toFixed(
+              2
+            )}`}</h1>
+            <h1 className="text-xs">{`Minimo: ${ganTaMaxMin.toFixed(2)}`}</h1>
+            <h1 className="text-xs">{`Maximo: ${ganTaMaxMax.toFixed(2)}`}</h1>
+          </div>
+        </div>
+        {/* traslape minimo */}
+        <div>
+          <br />
+          <h1 className="text-xl font-bold">Traslape + Arrugas:</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+            Traslape:
+            <div className="flex items-center justify-center">
+              <h1 className="pr-5 text-xs">40</h1>
+              <ProgressBar progressPercentage={(traslapeMin - 40) * 10} />
+              <h1 className="pl-5 text-xs">50</h1>
+            </div>
+            <h1 className="text-xs">{`Traslape Promedio: ${traslapeMin.toFixed(
+              3
+            )}`}</h1>
+          </div>
+          {/* arrugas */}
+          <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
+            {arrugas === 0 ? (
+              <span class="bg-green-300 text-green-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-green-900 dark:text-green-300">
+                Arrugas: {arrugas}
+              </span>
+            ) : (
+              <span class="bg-red-300 text-red-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-red-900 dark:text-red-300">
+                Arrugas: {arrugas}
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="pt-10">
+          <div>
+            <ul>
+              {detalles.forEach((element) => (
+                <li>{element}</li>
+              ))}
+            </ul>
+          </div>
+          <table>
+            <tbody>
+              <tr className="text-center">
+                <th>Hora</th>
+                <th>Codigo</th>
+                <th>Ancho Min</th>
+                <th>Ancho Max</th>
+                <th>Espesor Min</th>
+                <th>Espesor Max</th>
+                <th>Profundidad Min</th>
+                <th>Profundidad Max</th>
+                <th>Gancho Cuerpo Min</th>
+                <th>Gancho Cuerpo Max</th>
+                <th>Gancho Tapa Min</th>
+                <th>Gancho Tapa Max</th>
+                <th>Traslape Min</th>
+                <th>Traslape Max</th>
+                <th>Arrugas</th>
+                <th>Banda Impresion</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+              {detalles.map((element) => (
+                <tr key={element.idpropio} className="text-center">
+                  <td>{element.horanow}</td>
+                  <td>{element.codigo}</td>
+                  <td>{element.anchomin}</td>
+                  <td>{element.anchomax}</td>
+                  <td>{element.espesormin}</td>
+                  <td>{element.espesormax}</td>
+                  <td>{element.profundmin}</td>
+                  <td>{element.profundmax}</td>
+                  <td>{element.ganchocuerpomin}</td>
+                  <td>{element.ganchocuerpomax}</td>
+                  <td>{element.ganchotapamin}</td>
+                  <td>{element.ganchotapamax}</td>
+                  <td>{element.traslapemin}</td>
+                  <td>{element.traslapemax}</td>
+                  <td>{element.arrugas}</td>
+                  <td>{element.bandaimp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </Layout>
   );
