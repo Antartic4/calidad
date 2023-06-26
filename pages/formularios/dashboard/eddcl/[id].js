@@ -262,7 +262,6 @@ export default function ScreenEachDash({
       </div>
     );
   };
-
   return (
     <Layout>
       <div className="">
@@ -275,7 +274,7 @@ export default function ScreenEachDash({
         </div>
         <br />
         <div className="text-lg">
-          <h2 className="text-2xl font-bold">Dashboard EVCL</h2>
+          <h2 className="text-2xl font-bold">Dashboard EDDCL</h2>
           <br />
           <div className="flex items-center justify-center">
             <h4 className="w-1/2 font-bold">Dia:</h4>
@@ -299,7 +298,7 @@ export default function ScreenEachDash({
           <br />
           <div className="flex items-center justify-center">
             <h4 className="font-bold">Registros:</h4>
-            <h4 className="pl-4">{cabecera2[0].cosas.length}</h4>
+            <h4 className="pl-4">{detalles.length}</h4>
           </div>
           <br />
         </div>
