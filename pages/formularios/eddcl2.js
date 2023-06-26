@@ -4,7 +4,6 @@ import Maestroprods from '../../models/Maestroprods';
 import db from '../../utils/connectMongo';
 import { Controller, useForm } from 'react-hook-form';
 import { Combobox } from '@headlessui/react';
-import { Autocomplete, TextField } from '@mui/material';
 import Select from 'react-select';
 import axios from 'axios';
 import Link from 'next/link';
@@ -15,6 +14,8 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
   const router = useRouter();
 
   const sortedEHeaders = EDDCLheaders.reverse();
+
+  const [sortedData, setSortedData] = useState(sortedEHeaders);
 
   //console.log(EDDCLheaders);
   //console.log(sortedEHeaders);
@@ -227,6 +228,34 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
 
   const datenow = getCurrentDate().toString();
 
+  const nuevoSort = [];
+
+  EDDCLheaders.forEach((element) => {
+    nuevoSort.push(element);
+  });
+
+  const sortProducto = () => {
+    EDDCLheaders.sort(function (a, b) {
+      return a.producto.localeCompare(b.producto);
+    });
+  };
+
+  const handleSort = () => {
+    const sortedArray = [...sortedData];
+    sortedArray.sort((a, b) => {
+      // Modify the comparison logic based on your requirements
+      if (a.producto < b.producto) {
+        return -1;
+      } else if (a.producto > b.producto) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    setSortedData(sortedArray);
+    console.log(sortedArray);
+  };
+
   return (
     <Layout>
       <div className="flex justify-center h-screen bg-white ">
@@ -315,8 +344,11 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
         </div>
       </div>
       <h1 className="text-2xl font-bold">Registros</h1>
+      {/* <button className="bg-green-400 border rounded-2xl" onSubmit={handleSort}>
+        Producto
+      </button> */}
       <div className="grid grid-cols-1 gap-4 py-3 md:grid-cols-3 lg:grid-cols-4">
-        {EDDCLheaders.map((EDDCLheader) => (
+        {sortedData.map((EDDCLheader) => (
           <Link
             key={EDDCLheader._id}
             href={`/formularios/eddcl/${EDDCLheader._id}`}

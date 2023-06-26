@@ -216,198 +216,208 @@ export default function klk(props) {
                     </div>
                     <br />
                     {/* codigo */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="font-bold">Codigo:</h2>
-                      <div className="px-3">
-                        <input
-                          type="number"
-                          className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          placeholder="Codigo"
-                          name="codigo"
-                          ref={register}
-                        />
+                    <div className="grid justify-center grid-cols-2">
+                      <div>
+                        <h2 className="font-bold">Codigo:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="number"
+                            className=" form-control block py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            placeholder="Codigo"
+                            name="codigo"
+                            ref={register}
+                          />
+                        </div>
                       </div>
                       {/* cabeza no. */}
-                      <div className="flex items-center">
+                      <div className="">
                         <h2 className="font-bold">Cabeza No:</h2>
-                        <div className="px-3 dropdown-container">
+                        <div className="flex items-center justify-center">
                           <Controller
                             name="cabeza"
                             control={control}
                             render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Cabeza No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
+                              <div style={{ width: '300px' }}>
+                                <Select
+                                  options={opciones}
+                                  placeholder="Cabeza No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              </div>
                             )}
                           />
                         </div>
                       </div>
                     </div>
-
                     <br />
-                    {/* ancho (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Ancho:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="anchomin"
-                          placeholder="Min"
-                          name="anchomin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="anchomax"
-                          placeholder="Max"
-                          name="anchomax"
-                          ref={register}
-                        />
+                    {/* ancho (min max) + espesor (min max) */}
+                    <div className="grid justify-center grid-cols-2 text-center">
+                      <div className="">
+                        <h2 className="font-bold">Ancho:</h2>
+                        <div className="flex justify-center item-centerd">
+                          <input
+                            type="decimal"
+                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="anchomin"
+                            placeholder="Min"
+                            name="anchomin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="anchomax"
+                            placeholder="Max"
+                            name="anchomax"
+                            ref={register}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    {/* espesor (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Espesor:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="espesormin"
-                          placeholder="Min"
-                          name="espesormin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="espesormax"
-                          placeholder="Max"
-                          name="espesormax"
-                          ref={register}
-                        />
+                      {/* espesor (min max) */}
+                      <div className="">
+                        <h2 className="font-bold">Espesor:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="decimal"
+                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="espesormin"
+                            placeholder="Min"
+                            name="espesormin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="espesormax"
+                            placeholder="Max"
+                            name="espesormax"
+                            ref={register}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
                     {/* profund (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Profund:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="profundmin"
-                          placeholder="Min"
-                          name="profundmin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="profundmax"
-                          placeholder="Max"
-                          name="profundmax"
-                          ref={register}
-                        />
+                    <div className="grid justify-center grid-cols-2 text-center">
+                      <div className="">
+                        <h2 className="font-bold">Profundidad:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="decimal"
+                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="profundmin"
+                            placeholder="Min"
+                            name="profundmin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="profundmax"
+                            placeholder="Max"
+                            name="profundmax"
+                            ref={register}
+                          />
+                        </div>
+                      </div>
+                      {/* ganchocuerpo (min max) */}
+                      <div className="">
+                        <h2 className="font-bold">Gancho Cuerpo:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="decimal"
+                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="ganchocuerpomin"
+                            placeholder="Min"
+                            name="ganchocuerpomin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="ganchocuerpomax"
+                            placeholder="Max"
+                            name="ganchocuerpomax"
+                            ref={register}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
-                    {/* ganchocuerpo (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Gancho Cuerpo:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="ganchocuerpomin"
-                          placeholder="Min"
-                          name="ganchocuerpomin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="ganchocuerpomax"
-                          placeholder="Max"
-                          name="ganchocuerpomax"
-                          ref={register}
-                        />
+                    {/* ganchotapa (min max) + traslape (min max) */}
+                    <div className="grid justify-center grid-cols-2 text-center">
+                      <div className="">
+                        <h2 className="font-bold">Gancho Tapa:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="decimal"
+                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="ganchotapamin"
+                            placeholder="Min"
+                            name="ganchotapamin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="ganchotapamax"
+                            placeholder="Max"
+                            name="ganchotapamax"
+                            ref={register}
+                          />
+                        </div>
+                      </div>
+                      {/* traslape (min max) */}
+                      <div className="">
+                        <h2 className="font-bold">Traslape:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="decimal"
+                            className="form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="traslapemin"
+                            placeholder="Min"
+                            name="traslapemin"
+                            ref={register}
+                          />
+                          <input
+                            type="decimal"
+                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="traslapemax"
+                            placeholder="Max"
+                            name="traslapemax"
+                            ref={register}
+                          />
+                        </div>
                       </div>
                     </div>
                     <br />
-                    {/* ganchotapa (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Gancho Tapa:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="ganchotapamin"
-                          placeholder="Min"
-                          name="ganchotapamin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="ganchotapamax"
-                          placeholder="Max"
-                          name="ganchotapamax"
-                          ref={register}
-                        />
-                      </div>
-                    </div>
-                    <br />
-                    {/* traslape (min max) */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="pr-5 font-bold">Traslape:</h2>
-                      <div className="flex justify-around px-3">
-                        <input
-                          type="decimal"
-                          className=" form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="traslapemin"
-                          placeholder="Min"
-                          name="traslapemin"
-                          ref={register}
-                        />
-                        <input
-                          type="decimal"
-                          className="ml-5 form-control block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="traslapemax"
-                          placeholder="Max"
-                          name="traslapemax"
-                          ref={register}
-                        />
-                      </div>
-                    </div>
-                    <br />
-                    {/* arrugas */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="font-bold">Arrugas:</h2>
-                      <div className="px-3">
-                        <input
-                          type="number"
-                          className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="arrugas"
-                          placeholder="Arrugas"
-                          name="arrugas"
-                          ref={register}
-                        />
+                    {/* arrugas + Banda de Impresion */}
+                    <div className="grid justify-center grid-cols-2 text-center">
+                      <div>
+                        <h2 className="font-bold">Arrugas:</h2>
+                        <div className="flex justify-center">
+                          <input
+                            type="number"
+                            className=" form-control blockpy-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            id="arrugas"
+                            placeholder="Arrugas"
+                            name="arrugas"
+                            style={{ width: '300px', alignContent: 'center' }}
+                            ref={register}
+                          />
+                        </div>
                       </div>
                       {/* Banda de Impresion */}
-                      <div className="flex items-center justify-center">
+                      <div className="">
                         <h2 className="font-bold">Banda de Impresion:</h2>
-                        <div className="px-3">
+                        <div className="flex justify-center">
                           <input
                             type="char"
-                            className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="bandaimp"
+                            style={{ width: '300px', alignContent: 'center' }}
                             placeholder="Banda de Impresion"
                             name="bandaimp"
                             ref={register}
@@ -416,36 +426,24 @@ export default function klk(props) {
                       </div>
                     </div>
                     <br />
-                    {/* Fabrica Latas */}
-                    {/* <div className="flex items-center justify-center">
-                      <h2 className="w-1/3 font-bold">Fabrica Latas:</h2>
-                      <div className="w-2/3">
-                        <input
-                          type="text"
-                          className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="fabricalatas"
-                          placeholder="Fabrica de Latas"
-                          name="fabricalatas"
-                          ref={register}
-                        />
-                      </div>
-                    </div>
-                    <br /> */}
+
                     {/* Fabrica Latas 2. */}
-                    <div className="flex items-center justify-center">
+                    <div className="text-center">
                       <h2 className="font-bold">Fabrica Latas:</h2>
-                      <div className="px-3 dropdown-container">
+                      <div className="flex items-center justify-center">
                         <Controller
                           name="fabricalatas"
                           control={control}
                           render={({ onChange, value, ref }) => (
-                            <Select
-                              options={opciones2}
-                              placeholder="Fabrica Latas"
-                              // value={selectedOptions}
-                              onChange={(val) => onChange(val.value)}
-                              isSearchable={true}
-                            />
+                            <div style={{ width: '300px' }}>
+                              <Select
+                                options={opciones2}
+                                placeholder="Fabrica Latas"
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            </div>
                           )}
                         />
                       </div>

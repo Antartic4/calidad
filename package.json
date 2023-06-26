@@ -19,6 +19,7 @@
     "axios": "^1.2.2",
     "chart.js": "^4.3.0",
     "cookies-js": "^1.2.3",
+    "deps": "^1.0.0",
     "dotenv": "^16.0.3",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
