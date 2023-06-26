@@ -274,6 +274,35 @@ export default function ScreenEachDash({
           </Link>
         </div>
         <br />
+        <div className="text-lg">
+          <h2 className="text-2xl font-bold">Dashboard EVCL</h2>
+          <br />
+          <div className="flex items-center justify-center">
+            <h4 className="w-1/2 font-bold">Dia:</h4>
+            <h4 className="w-1/2 pl-8">{cabecera2[0].datenow}</h4>
+          </div>
+          <br />
+          <div className="flex items-center justify-center">
+            <h4 className="w-1/2 font-bold">Codigo Producto:</h4>
+            <h4 className="w-1/2 pl-8">{cabecera2[0].producto}</h4>
+          </div>
+          <br />
+          <div className="flex items-center">
+            <h4 className="w-1/2 font-bold">Nombre Producto:</h4>
+            <h4 className="w-1/2 pl-8">{cabecera2[0].productoname}</h4>
+          </div>
+          <br />
+          <div className="flex items-center">
+            <h4 className="w-1/2 font-bold">Tipo lata:</h4>
+            <h4 className="w-1/2 pl-8">{cabecera2[0].tipolata}</h4>
+          </div>
+          <br />
+          <div className="flex items-center justify-center">
+            <h4 className="font-bold">Registros:</h4>
+            <h4 className="pl-4">{cabecera2[0].cosas.length}</h4>
+          </div>
+          <br />
+        </div>
         <div>
           <h1 className="text-2xl font-bold">Averages</h1>
         </div>

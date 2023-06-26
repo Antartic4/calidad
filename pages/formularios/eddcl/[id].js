@@ -21,8 +21,6 @@ export default function klk(props) {
     formState: { errors },
   } = useForm();
 
-  console.log(eddcldetail);
-
   const [eDDCLHInfo, setEDDCLHInfo] = useState({
     headid: router.query.id,
     codigo: '',
