@@ -280,7 +280,38 @@ input {
 }
 
 .dropdown-container {
-  width: 300px;
+  textalign: left;
+  border: 1px solid #ccc;
+  position: relative;
+  borderradius: 5px;
+}
+
+.dropdown-input {
+  padding: 5px;
+  display: flex;
+  alignitems: center;
+  justifycontent: space-between;
+  userselect: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  transform: translateY(4px);
+  width: 100%;
+  border: 1px solid #ccc;
+  borderradius: 5px;
+  overflow: auto;
+  maxheight: 150px;
+  backgroundcolor: #fff;
+}
+
+.dropdown-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  backgroundcolor: #9fc3f870;
 }
 
 .suggestions li {

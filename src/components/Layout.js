@@ -146,22 +146,26 @@ export default function Layout({ title, children }) {
                     </Drawer>
                   </div>
                   <div className="flex items-center justify-center">
-                    <a className="px-4">
-                      <Link legacyBehavior href="/">
-                        <Image
-                          src={logofamosa}
-                          className="flex shrink-0"
-                          alt="improved-l-1"
-                          border="0"
-                          width={150}
-                          height={75}
-                        />
-                      </Link>
-                    </a>
+                    <div>
+                      <a className="px-4">
+                        <Link legacyBehavior href="/">
+                          <Image
+                            src={logofamosa}
+                            className="flex shrink-0"
+                            alt="improved-l-1"
+                            border="0"
+                            width={150}
+                            height={75}
+                          />
+                        </Link>
+                      </a>
+                    </div>
                     <div className="">
                       <Link href="/">
-                        <div className="text-2xl ">
-                          <h4 className="pl-5 text-center">La Famosa v.01</h4>
+                        <div className="text-3xl ">
+                          <h4 className="pl-5 text-center">
+                            La Famosa - CALIDAD
+                          </h4>
                         </div>
                       </Link>
                     </div>
@@ -189,7 +193,7 @@ export default function Layout({ title, children }) {
           </header>
           <main className="container px-4 m-auto mt-4">{children}</main>
           <footer className="items-center justify-center h-20 pt-3 text-center shadow-inner">
-            <p>Copyright © 2022 Peravia Industrial S.A.</p>
+            <p className="text-lg ">Copyright © 2023 Peravia Industrial S.A.</p>
           </footer>
         </div>
       </div>

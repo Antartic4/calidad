@@ -151,52 +151,63 @@ export default function klk(props) {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-10">
         <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
           <div className="button-borders">
             <button className="primary-button">Ver Version Fisica</button>
           </div>
         </Link>
+        <br />
       </div>
       <br />
       <div className="flex justify-center">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-2xl font-bold text-center">
+          <h1 className="py-2 text-3xl font-bold text-center">
             {'Examen Destructivo Doble Cierre Latas para :'}
-            <p className="text-lg font-bold">{eddclheader._id}</p>
           </h1>
           <br />
-          {/* Fecha */}
+          <p className="text-2xl font-normal">{eddclheader._id}</p>
+          <br />
+          <div className="grid grid-cols-2 gap-4">
+            {/* Fecha */}
 
-          <div className="flex justify-between">
-            <p className="font-bold text-left">Fecha : </p>
-            <div className="pl-5 pr-10 text-right">{eddclheader.datenow}</div>
-          </div>
-          {/* Tapadora Text-Input */}
-          <div className="flex justify-between py-2">
-            <p className="font-bold text-left">Tapadora N° :</p>
-            <div className="pr-10 text-right">{eddclheader.tapadora}</div>
-          </div>
+            <div className="">
+              <p className="text-3xl font-bold text-center">Fecha : </p>
+              <br />
+              <h2 className="text-2xl text-center">{eddclheader.datenow}</h2>
+            </div>
+            {/* Tapadora Text-Input */}
+            <div className="">
+              <p className="text-3xl font-bold text-center">Tapadora N° :</p>
+              <br />
+              <h2 className="text-2xl text-center">{eddclheader.tapadora}</h2>
+            </div>
 
-          {/* Tipo de Lata Text-Input */}
-          <div className="flex justify-between py-2">
-            <p className="font-bold text-left">Tipo de Lata :</p>
-            <div className="pr-10 text-right">{eddclheader.tipolata}</div>
-          </div>
+            {/* Tipo de Lata Text-Input */}
+            <div className="">
+              <p className="text-3xl font-bold text-center">Tipo de Lata :</p>
+              <br />
+              <h2 className="text-2xl text-center">{eddclheader.tipolata}</h2>
+            </div>
 
-          {/* Producto Text-Input */}
-          <div className="flex justify-between py-2 pb-5">
-            <p className="font-bold text-left">Producto:</p>
-            <div className="pr-10 text-right">{eddclheader.producto}</div>
+            {/* Producto Text-Input */}
+            <div className="">
+              <p className="text-3xl font-bold text-center">Producto:</p>
+              <br />
+              <h2 className="text-2xl text-center">{eddclheader.producto}</h2>
+            </div>
           </div>
         </div>
       </div>
       <div className="flex justify-center w-full pt-5">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-2xl font-bold text-center">
-            Entrada Detalle para : {eddclheader.producto} (
-            {eddclheader.tipolata})
+          <h1 className="py-2 text-3xl font-bold text-center">
+            Entrada Detalle para :
           </h1>
+          <h2 className="text-2xl">
+            {eddclheader.producto} <br />({eddclheader.tipolata})
+          </h2>
+
           <br />
           {/* donde van los campos a entrar */}
           <div>
