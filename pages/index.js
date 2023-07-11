@@ -35,6 +35,7 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 ">
                 <Link href="/formularios/evcl">
                   <div className="flex justify-center">
                     <Image
@@ -57,6 +58,7 @@ export default function Home() {
                 </Link>
               </div>
 
+              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 ">
                 <Link href="/mantenimiento">
                   <div className="flex justify-center">
                     <Image
@@ -84,6 +86,7 @@ export default function Home() {
           <br />
           <h2 className="text-3xl font-bold underline">Dashboard:</h2>
           <div className="grid grid-cols-1 gap-8 mt-8">
+            <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 ">
               <Link href="/formularios/dashboard/eddcl">
                 <div className="flex justify-center">
                   <Image
@@ -106,6 +109,7 @@ export default function Home() {
               </Link>
             </div>
 
+            <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 ">
               <Link href="/formularios/dashboard/evcl">
                 <div className="flex justify-center">
                   <Image
