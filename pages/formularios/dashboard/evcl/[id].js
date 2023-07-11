@@ -179,35 +179,34 @@ export default function ScreenEachDash({
       <div className="text-lg">
         <h2 className="text-2xl font-bold">Dashboard EVCL</h2>
         <br />
-        <div className="flex items-center justify-center">
-          <h4 className="w-1/2 font-bold">Dia:</h4>
-          <h4 className="w-1/2 pl-8">{cabecera2[0].datenow}</h4>
+        <div className="flex items-center justify-between">
+          <h4 className="font-bold text-left ">Fecha:</h4>
+          <h4 className="text-right ">{cabecera2[0].datenow}</h4>
         </div>
         <br />
-        <div className="flex items-center justify-center">
-          <h4 className="w-1/2 font-bold">Producto:</h4>
-          <h4 className="w-1/2 pl-8">{cabecera2[0].producto}</h4>
+        <div className="flex items-center justify-between">
+          <h4 className="font-bold text-left ">Producto:</h4>
+          <h4 className="text-right ">{cabecera2[0].producto}</h4>
         </div>
         <br />
-        <div className="flex items-center">
-          <h4 className="w-1/2 font-bold">Nombre:</h4>
-          <h4 className="w-1/2 pl-8">{cabecera2[0].productoname}</h4>
+        <div className="flex items-center justify-between">
+          <h4 className="font-bold text-left ">Nombre:</h4>
+          <h4 className="text-right ">{cabecera2[0].productoname}</h4>
         </div>
         <br />
-        <div className="flex items-center">
-          <h4 className="w-1/2 font-bold">Tipo lata:</h4>
-          <h4 className="w-1/2 pl-8">{cabecera2[0].tipolata}</h4>
+        <div className="flex items-center justify-between">
+          <h4 className="font-bold text-left ">Tipo Lata:</h4>
+          <h4 className="text-right ">{cabecera2[0].tipolata}</h4>
         </div>
         <br />
-        <div className="flex items-center justify-center">
-          <h4 className="font-bold">Registros:</h4>
-          <h4 className="pl-4">{cabecera2[0].cosas.length}</h4>
+        <div className="flex items-center justify-between">
+          <h4 className="font-bold text-left ">Registros:</h4>
+          <h4 className="text-right ">{cabecera2[0].cosas.length}</h4>
         </div>
-        <br />
       </div>
       <br />
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-5">
         {/* Cabeza 1 */}
         <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
           Cabeza 1:
@@ -410,10 +409,10 @@ export default function ScreenEachDash({
         <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
           Observaciones:
           {observacioness.length === 0 ? (
-            <h2 className="text-sm text-red-600"> No hay Observaciones.</h2>
-          ) : (
+            <h2 className="text-lg text-red-600"> No hay Observaciones.</h2>
+          ) : observacioness.length > 0 && observacioness.length < 3 ? (
             <div>
-              <ul className="text-sm text-left text-red-600">
+              <ul className="text-lg text-left text-red-600">
                 {observacioness.map((item) => (
                   <li key={item} className="text-red-700">
                     • {item}
@@ -421,13 +420,17 @@ export default function ScreenEachDash({
                 ))}
               </ul>
             </div>
+          ) : (
+            <h2 className="text-lg text-red-600">
+              Enumeradas debajo de la tabla.
+            </h2>
           )}
         </div>
       </div>
       <div>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div className="relative overflow-x-auto rounded-lg shadow-md">
+          <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Hora

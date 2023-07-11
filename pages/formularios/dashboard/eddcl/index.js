@@ -136,22 +136,26 @@ export default function ScreenEDDCL({
       </div>
       <br />
       <div>
-        <h1 className="text-2xl font-bold">Totales:</h1>
+        <h1 className="text-2xl font-semi">Totales:</h1>
         <br />
-        <div className="">
-          <div className="items-center font-bold text-center ">
+        <div>
+          <div className="items-center text-center ">
             <div className="flex ">
-              <div className="text-left">COUNT de datos en Cabecera:</div>
+              <div className="text-left font-semi">
+                COUNT de datos en Cabecera:
+              </div>
               <div className="pl-2 text-right">{EDDCLheaders.length}</div>
             </div>
             <div className="flex ">
-              <div className="text-left">COUNT de datos en Detalles:</div>
-              <div className="pl-2 text-right">{detalles.length}</div>
+              <div className="text-left font-semi">
+                COUNT de datos en Detalles:
+              </div>
+              <div className="pl-2 text-right ">{detalles.length}</div>
             </div>
           </div>
         </div>
         <br />
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           {cabecera2.map((item) => (
             <div
               key={item.id}

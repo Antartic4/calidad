@@ -58,96 +58,13 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
   );
 
   const artipolata = [
-    '214/300X407 PASTA FAMOSA EASY OPEN',
-    '209/ 211 X 300 A/F PARCIAL LECHE DE COCO',
-    '209/ 211 X 400.5 LECHE/CREMA TAPA SOT',
-    '209/ 211 X 413 E/P LECHE DE COCO',
-    '209/211 X 300 E/P GRANOS',
-    '209/211 X 300 PASTA TOMATE FAMOSA',
-    '209/211 X 300 PLAIN/ PASTA VARIOS',
-    '209/211 X 400.5 MANZANA LA FAMOSA',
-    '209/211 X 400.5 PASTA DE TOM FAMOSA',
-    '209/211 X 400.5 PERA LA FAMOSA',
-    '209/211 X 400.5 PINA  FAMOSA',
-    '209/211X200 SALCH JAJA SALSA TOM LI',
-    '209/211X200 SALCH.COCKTAIL JAJA LIT',
-    '209/211X200 SALCH.JAJA D/PAVO LITO',
-    '209/211X200 SALCH.JAJA D/POLLO LITO',
-    '209/211X200 SALCH.JAJA PICADERA LIT',
-    '209/211X200 SALCH.JAJA T/VIENA LITO',
-    '209/211X200 SALCH.PREDILECTA AF JAJ',
-    '209/211X200LECHE EVAPO.JAJA 145G LI',
-    '209/211X300 E/P TAPA SOT(ABRE F.PAR',
-    '209/211X300 FRAPPE COCO LA FAMOSA',
-    '209/211X300 PASTA TOMATE JAJA',
-    '209/211X300 PLAIN TOM BARNIZ EXT.',
-    '209/211X300 T/SOT SUCOCO FAMOSA',
-    '209/211X300 TOMATE ENTERO (PLAIN PLAIN)',
-    '209/211X400 EVAPORADA CON TAPA SOT',
-    '209/211X400 LECHE DE COCO JAJA LIT0',
-    '209/211X400 PLAIN BARNIZ EXT.LECHE EVAPO',
-    '209/211X400 SALCH.COCKTAIL JAJA LIT',
-    '209/211X400 SALCH.JAJA D/PAVO LITO',
-    '209/211X400 SALCH.JAJA D/POLLO LITO',
-    '209/211X400 SALCH.JAJA PICADERA LIT',
-    '209/211X400 SALCH.JAJA T/VIENA LITO',
-    '209/211X400.5 E/P SALAMI GUISADO',
-    '209/211X400.5 JUGO PINA JAJA',
-    '209/211X400.5 LECHE EVAPOR. PLAIN',
-    '209/211X400.5 NECTAR PERA BAJO EN AZUCAR',
-    '209/211X400.5 NECTAR PERA JAJA',
-    '209/211X400.5 PLAIN LECHE COCO',
-    '209/211X400.5 SALCH.PREDILEC.AF JAJ',
-    '209/211X413 ABRE FACIL(T) S/BNIZ EX',
-    '209/211X413 LECHE /CREMA TAPA SOT',
-    '209/211X413 LECHE/CREMA  C/BARNIZ EXT',
-    '211 DIA PLAIN P/PROD VARI A/F TOTAL',
-    '211 DIA. ESMALTE INT. PLAIN EXT. EVAPORA',
-    '211 DIA. P/PASTA DE TOMATE LITO.',
-    '211 DIA. PLAIN P/PRODS. VARIOS',
-    '211 DIA. VARIOS A/F PARCIAL  SOT',
-    '211 LECHE EVAPO.ESMALTADA(BARNIZADA',
-    '214/300 X 407 A/F PARCIAL  LECHE COCO',
-    '214/300 X 407 DULCE/TOMATE/LECHE PLAIN',
-    '214/300 X 407 GRANOS PLAIN',
-    '214/300 X 407 PASTA FAMOSA',
-    '214/300X407 PASTA DE TOMATE JAJA',
-    '214/300X407 PLAIN TOMATE BARNIZ EXT.',
-    '214/300X407 SALCHICHA JAJA T/VIENA LITO',
-    '214/300X407 TROCI.SALCHICHA SALSA TOMATE',
-    '300 DIA PLAIN/PROD VARI A/F PARCIAL SOT',
-    '300 DIA PROD VARI ABRE FACIL TOTAL',
-    '300 DIA. PLAIN P/PRODS. VARIOS',
-    '401 DIA. GRANOS',
-    '401 DIA. LECHE DE COCO',
-    '401 DIA. PASTA PRODS. VARIOS A/F TOTAL',
-    '401 DIA. PASTA Y PRODS. VARIOS',
-    '401 X 411 CATCHUP LA FAMOSA',
-    '401 X 411 E/P PRODS. VARIOS(TOMATE)',
-    '401 X 411 E/P. GRANOS.',
-    '401 X 411 TOMATE ABRE FACIL TOTAL FAMOSA',
-    '401 X 411 TOMATE ABRE FACIL TOTAL JAJA',
-    '401 X 411 TOMATE LA FAMOSA',
-    '401X411 A/F PARCIAL BARNIZ EXT LECHE  CO',
-    '401X411 CATCHUP JAJA',
-    '401X411 PLAIN GRANOS BARNIZ EXT ABRE FAC',
-    '401X411 PLAIN GRANOS BARNIZ EXT.',
-    '401X411 PLAIN TOMATE C/BARNIZ EXT.',
-    '401X411 TOMATE JAJA',
-    '603 DIA. PLAIN P/GRANOS Y OTROS',
-    '603 DIA. TOMATE PLAIN VARIOS',
-    '603 X 700 CATCHUP LA FAMOSA',
-    '603 X 700 E/P PASTA',
-    '603 X 700 P/P PI?A',
-    '603 X 700 PASTA DE TOMATE FAMOSA',
-    '603 X 700 PASTA DE TOMATE POSSI',
-    '603 X 700 PLAIN GRANOS BARNIZ EXT.',
-    '603 X 700 TOMATE ESM. BARNIZ EXT. PLAIN',
-    '603X700 CATCHUP JAJA',
-    '603X700 PASTA DE TOMATE JAJA',
-    'ROLL TOP 2/11 PARA LECHE DE COCO',
-    'ROLL TOP 2/11 PARA MAJARETE',
-    'ROLL TOP 300 VEG MIXTOS Y GRANOS',
+    '209/211 x 200',
+    '209/211 x 300',
+    '209/211 x 400',
+    '209/211 x 413',
+    '214/300 x 407',
+    '401 x 411',
+    '603 x 700',
   ];
 
   const CBtapadora = [
@@ -335,8 +252,8 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
 
   return (
     <Layout>
-      <div className="flex justify-center h-screen bg-white ">
-        <div className="relative w-full top-36 ">
+      <div className="flex justify-center h-screen bg-blue-300 ">
+        <div className="relative w-full top-12">
           <div className="">
             <div className="flex items-center justify-center">
               <Link href="https://i.ibb.co/9GdTS3m/eddcl.png">
@@ -347,20 +264,23 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                 </div>
               </Link>
             </div>
+            <br />
             <form onSubmit={handleSubmit(onSubmit)}>
               <h1 className="py-5 text-3xl font-bold">
                 Examen Destructivo Cierre de Latas
               </h1>
               <br />
-              <div className="grid grid-cols-2 gap-4">
+              <div>
                 <div>
                   <h2 className="text-2xl font-bold">Fecha:</h2>
-                  <h2 className="pt-10 text-2xl">{datenow}</h2>
+                  <h2 className="text-2xl">{datenow}</h2>
                 </div>
+                <br />
                 <div>
-                  <h2 className="pt-2 text-2xl font-bold">Tapadora:</h2>
-                  <br />
-                  <div className="w-full">
+                  <h2 className="pt-2 text-2xl font-bold bg-red-300">
+                    Tapadora:
+                  </h2>
+                  <div className="">
                     <Controller
                       name="tapadora"
                       control={control}
@@ -377,26 +297,26 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                     />
                   </div>
                 </div>
+                <br />
                 <div>
                   <h2 className="pt-3 text-2xl font-bold">Tipo de Lata:</h2>
-                  <br />
-                  <div className="dropdown-container"></div>
-                  <Controller
-                    name="tipolata"
-                    control={control}
-                    render={({ onChange, value, ref }) => (
-                      <Select
-                        options={paraCBTL2}
-                        placeholder="Tipo de Lata"
-                        value={selectedOptions}
-                        className="text-xl"
-                        onChange={(val) => onChange(val.value)}
-                        isSearchable={true}
-                      />
-                    )}
-                  />
-                </div>
-                <div>
+                  <div className="w-full">
+                    <Controller
+                      name="tipolata"
+                      control={control}
+                      render={({ onChange, value, ref }) => (
+                        <Select
+                          options={paraCBTL2}
+                          placeholder="Tipo de Lata"
+                          value={selectedOptions}
+                          className="text-xl"
+                          onChange={(val) => onChange(val.value)}
+                          isSearchable={true}
+                        />
+                      )}
+                    />
+                  </div>
+                  <div></div>
                   <h2 className="pt-3 text-2xl font-bold">Producto:</h2>
                   <br />
                   <div className="dropdown-container"></div>
@@ -430,260 +350,262 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
           </div>
         </div>
       </div>
-      <h1 className="text-2xl font-bold">Registros</h1>
+      <h1 className="text-2xl font-semi">Registros</h1>
       {/* <button className="bg-green-400 border rounded-2xl" onSubmit={handleSort}>
         Producto
       </button> */}
       Sort
-      <div className="flex justify-center">
-        <div className="w-1/4 px-2 py-2 border border-black rounded-lg">
-          <h2 className="text-xl font-bold">Fecha</h2>
-          <div className="flex justify-center">
-            <div className="flex items-center">
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link legacyBehavior href={'/formularios/eddcl2?fecha=0'}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
+      <div className="">
+        <div className="flex justify-center">
+          <div className="w-1/2 px-2 py-2 border border-black rounded-lg">
+            <h2 className="text-xl font-semi">Fecha</h2>
+            <div className="flex justify-center">
+              <div className="flex items-center">
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link legacyBehavior href={'/formularios/eddcl2?fecha=0'}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">reciente a primero</p>
+                    </div>
+                  </div>
+                </a>
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link legacyBehavior href={'/formularios/eddcl2?fecha=1'}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">primero a reciente</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2 px-2 py-2 ml-1 border border-black rounded-lg">
+            <h2 className="text-xl font-semi">Producto</h2>
+            <div className="flex justify-center">
+              <div className="flex items-center">
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?producto=0'}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
-                        />
-                      </svg>
-                    </Link>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">primero a ultimo</p>
+                    </div>
                   </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">reciente a primero</p>
-                  </div>
-                </div>
-              </a>
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link legacyBehavior href={'/formularios/eddcl2?fecha=1'}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
+                </a>
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?producto=1'}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                        />
-                      </svg>
-                    </Link>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">ultimo a primero</p>
+                    </div>
                   </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">primero a reciente</p>
-                  </div>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-1/4 px-2 py-2 ml-4 border border-black rounded-lg">
-          <h2 className="text-xl font-bold">Producto</h2>
-          <div className="flex justify-center">
-            <div className="flex items-center">
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?producto=0'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
+        <div className="flex items-center justify-center mt-1">
+          <div className="w-1/2 px-2 py-2 border border-black rounded-lg">
+            <h2 className="text-xl font-semi">Tapadora</h2>
+            <div className="flex justify-center">
+              <div className="flex items-center">
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?tapadora=0'}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
-                        />
-                      </svg>
-                    </Link>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">primero a ultimo</p>
+                    </div>
                   </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">primero a ultimo</p>
-                  </div>
-                </div>
-              </a>
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?producto=1'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
+                </a>
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?tapadora=01'}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                        />
-                      </svg>
-                    </Link>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">ultimo a primero</p>
+                    </div>
                   </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">ultimo a primero</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2 px-2 py-2 ml-1 border border-black rounded-lg">
+            <h2 className="text-xl font-semi">Tipo Lata</h2>
+            <div className="flex justify-center">
+              <div className="flex items-center">
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?tipolata=0'}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">primero a ultimo</p>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+                <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
+                  <div>
+                    <div className="relative flex justify-center">
+                      <Link
+                        legacyBehavior
+                        href={'/formularios/eddcl2?tipolata=1'}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <p className="text-sm">ultimo a primero</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-1/4 px-2 py-2 ml-4 border border-black rounded-lg">
-          <h2 className="text-xl font-bold">Tapadora</h2>
-          <div className="flex justify-center">
-            <div className="flex items-center">
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?tapadora=0'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">primero a ultimo</p>
-                  </div>
-                </div>
-              </a>
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?tapadora=01'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">ultimo a primero</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="w-1/4 px-2 py-2 ml-4 border border-black rounded-lg">
-          <h2 className="text-xl font-bold">Tipo Lata</h2>
-          <div className="flex justify-center">
-            <div className="flex items-center">
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?tipolata=0'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">primero a ultimo</p>
-                  </div>
-                </div>
-              </a>
-              <a className="px-2 py-2 border rounded-lg bg-slate-300 hover:bg-slate-100">
-                <div>
-                  <div className="relative flex justify-center">
-                    <Link
-                      legacyBehavior
-                      href={'/formularios/eddcl2?tipolata=1'}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="relative flex justify-center">
-                    <p className="text-sm">ultimo a primero</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
         <br />
         Filtro
         <div className="flex items-center justify-center">

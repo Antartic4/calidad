@@ -15,6 +15,31 @@ body {
   transform: translate(-50%, -50%);
 }
 
+tablita {
+  tablelayout: 'fixed';
+  width: 100%;
+}
+
+.uno {
+  width: 25%;
+}
+.dos {
+  width: 15%;
+}
+.tres {
+  width: 40%;
+}
+
+.table-wrp {
+  max-height: 75vh;
+  overflow-y: auto;
+  display: block;
+}
+thead {
+  position: sticky;
+  top: 0;
+}
+
 .circle-background {
   fill: none;
   stroke: #ddd;

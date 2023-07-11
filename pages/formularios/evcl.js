@@ -3,13 +3,17 @@ import Layout from '../../src/components/Layout';
 import Maestroprods from '../../models/Maestroprods';
 import db from '../../utils/connectMongo';
 import { Controller, useForm } from 'react-hook-form';
-import { Combobox } from '@headlessui/react';
-import { Autocomplete, TextField } from '@mui/material';
 import Select from 'react-select';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import EVCLheader from '../../models/EVCLheader';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
+import { FilterMatchMode } from 'primereact/api';
+import { InputText } from 'primereact/inputtext';
 
 export default function Eddcl2({ maestroprods, EVCLheaders }) {
   const router = useRouter();
@@ -17,6 +21,10 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
   const sortedEHeaders = EVCLheaders.reverse();
 
   const productos = JSON.parse(maestroprods);
+
+  const [filters, setFilters] = useState({
+    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  });
 
   //tipo lata (limpiar lo que pude)
   const unicotl = Array.from(new Set(productos.map((item) => item.tipolata)));
@@ -33,96 +41,13 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
   );
 
   const artipolata = [
-    '214/300X407 PASTA FAMOSA EASY OPEN',
-    '209/ 211 X 300 A/F PARCIAL LECHE DE COCO',
-    '209/ 211 X 400.5 LECHE/CREMA TAPA SOT',
-    '209/ 211 X 413 E/P LECHE DE COCO',
-    '209/211 X 300 E/P GRANOS',
-    '209/211 X 300 PASTA TOMATE FAMOSA',
-    '209/211 X 300 PLAIN/ PASTA VARIOS',
-    '209/211 X 400.5 MANZANA LA FAMOSA',
-    '209/211 X 400.5 PASTA DE TOM FAMOSA',
-    '209/211 X 400.5 PERA LA FAMOSA',
-    '209/211 X 400.5 PINA  FAMOSA',
-    '209/211X200 SALCH JAJA SALSA TOM LI',
-    '209/211X200 SALCH.COCKTAIL JAJA LIT',
-    '209/211X200 SALCH.JAJA D/PAVO LITO',
-    '209/211X200 SALCH.JAJA D/POLLO LITO',
-    '209/211X200 SALCH.JAJA PICADERA LIT',
-    '209/211X200 SALCH.JAJA T/VIENA LITO',
-    '209/211X200 SALCH.PREDILECTA AF JAJ',
-    '209/211X200LECHE EVAPO.JAJA 145G LI',
-    '209/211X300 E/P TAPA SOT(ABRE F.PAR',
-    '209/211X300 FRAPPE COCO LA FAMOSA',
-    '209/211X300 PASTA TOMATE JAJA',
-    '209/211X300 PLAIN TOM BARNIZ EXT.',
-    '209/211X300 T/SOT SUCOCO FAMOSA',
-    '209/211X300 TOMATE ENTERO (PLAIN PLAIN)',
-    '209/211X400 EVAPORADA CON TAPA SOT',
-    '209/211X400 LECHE DE COCO JAJA LIT0',
-    '209/211X400 PLAIN BARNIZ EXT.LECHE EVAPO',
-    '209/211X400 SALCH.COCKTAIL JAJA LIT',
-    '209/211X400 SALCH.JAJA D/PAVO LITO',
-    '209/211X400 SALCH.JAJA D/POLLO LITO',
-    '209/211X400 SALCH.JAJA PICADERA LIT',
-    '209/211X400 SALCH.JAJA T/VIENA LITO',
-    '209/211X400.5 E/P SALAMI GUISADO',
-    '209/211X400.5 JUGO PINA JAJA',
-    '209/211X400.5 LECHE EVAPOR. PLAIN',
-    '209/211X400.5 NECTAR PERA BAJO EN AZUCAR',
-    '209/211X400.5 NECTAR PERA JAJA',
-    '209/211X400.5 PLAIN LECHE COCO',
-    '209/211X400.5 SALCH.PREDILEC.AF JAJ',
-    '209/211X413 ABRE FACIL(T) S/BNIZ EX',
-    '209/211X413 LECHE /CREMA TAPA SOT',
-    '209/211X413 LECHE/CREMA  C/BARNIZ EXT',
-    '211 DIA PLAIN P/PROD VARI A/F TOTAL',
-    '211 DIA. ESMALTE INT. PLAIN EXT. EVAPORA',
-    '211 DIA. P/PASTA DE TOMATE LITO.',
-    '211 DIA. PLAIN P/PRODS. VARIOS',
-    '211 DIA. VARIOS A/F PARCIAL  SOT',
-    '211 LECHE EVAPO.ESMALTADA(BARNIZADA',
-    '214/300 X 407 A/F PARCIAL  LECHE COCO',
-    '214/300 X 407 DULCE/TOMATE/LECHE PLAIN',
-    '214/300 X 407 GRANOS PLAIN',
-    '214/300 X 407 PASTA FAMOSA',
-    '214/300X407 PASTA DE TOMATE JAJA',
-    '214/300X407 PLAIN TOMATE BARNIZ EXT.',
-    '214/300X407 SALCHICHA JAJA T/VIENA LITO',
-    '214/300X407 TROCI.SALCHICHA SALSA TOMATE',
-    '300 DIA PLAIN/PROD VARI A/F PARCIAL SOT',
-    '300 DIA PROD VARI ABRE FACIL TOTAL',
-    '300 DIA. PLAIN P/PRODS. VARIOS',
-    '401 DIA. GRANOS',
-    '401 DIA. LECHE DE COCO',
-    '401 DIA. PASTA PRODS. VARIOS A/F TOTAL',
-    '401 DIA. PASTA Y PRODS. VARIOS',
-    '401 X 411 CATCHUP LA FAMOSA',
-    '401 X 411 E/P PRODS. VARIOS(TOMATE)',
-    '401 X 411 E/P. GRANOS.',
-    '401 X 411 TOMATE ABRE FACIL TOTAL FAMOSA',
-    '401 X 411 TOMATE ABRE FACIL TOTAL JAJA',
-    '401 X 411 TOMATE LA FAMOSA',
-    '401X411 A/F PARCIAL BARNIZ EXT LECHE  CO',
-    '401X411 CATCHUP JAJA',
-    '401X411 PLAIN GRANOS BARNIZ EXT ABRE FAC',
-    '401X411 PLAIN GRANOS BARNIZ EXT.',
-    '401X411 PLAIN TOMATE C/BARNIZ EXT.',
-    '401X411 TOMATE JAJA',
-    '603 DIA. PLAIN P/GRANOS Y OTROS',
-    '603 DIA. TOMATE PLAIN VARIOS',
-    '603 X 700 CATCHUP LA FAMOSA',
-    '603 X 700 E/P PASTA',
-    '603 X 700 P/P PI?A',
-    '603 X 700 PASTA DE TOMATE FAMOSA',
-    '603 X 700 PASTA DE TOMATE POSSI',
-    '603 X 700 PLAIN GRANOS BARNIZ EXT.',
-    '603 X 700 TOMATE ESM. BARNIZ EXT. PLAIN',
-    '603X700 CATCHUP JAJA',
-    '603X700 PASTA DE TOMATE JAJA',
-    'ROLL TOP 2/11 PARA LECHE DE COCO',
-    'ROLL TOP 2/11 PARA MAJARETE',
-    'ROLL TOP 300 VEG MIXTOS Y GRANOS',
+    '209/211 x 200',
+    '209/211 x 300',
+    '209/211 x 400',
+    '209/211 x 413',
+    '214/300 x 407',
+    '401 x 411',
+    '603 x 700',
   ];
 
   artipolata.forEach((element) => {
@@ -131,49 +56,6 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
       label: element,
     });
   });
-
-  const CBtapadora = [
-    {
-      value: 1,
-      label: 'Tapadora #1',
-    },
-    {
-      value: 2,
-      label: 'Tapadora #2',
-    },
-    {
-      value: 3,
-      label: 'Tapadora #3',
-    },
-    {
-      value: 4,
-      label: 'Tapadora #4',
-    },
-    {
-      value: 5,
-      label: 'Tapadora #5',
-    },
-    {
-      value: 6,
-      label: 'Tapadora #6',
-    },
-    {
-      value: 7,
-      label: 'Tapadora #7',
-    },
-    {
-      value: 8,
-      label: 'Tapadora #8',
-    },
-    {
-      value: 9,
-      label: 'Tapadora #9',
-    },
-    {
-      value: 10,
-      label: 'Tapadora #10',
-    },
-  ];
 
   unicotl.forEach((element) =>
     paraCBTL.push({
@@ -192,7 +74,7 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
   } = useForm();
 
   const onSubmit = async (formData, e) => {
-    console.log(formData);
+    // console.log(formData);
     try {
       await axios.post('/../api/evclinsert', {
         tipolata: formData.tipolata,
@@ -218,63 +100,92 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
 
   const datenow = getCurrentDate().toString();
 
+  console.log('sortedEHeaders', sortedEHeaders);
+
+  const paraTabla = [];
+  sortedEHeaders.forEach((item) => {
+    let fechaString = item.datenow;
+    let [dia, mes, ano] = fechaString.split('-');
+    let objFecha = new Date(+ano, +mes - 1, +dia);
+    let linklink = (
+      <div className="p-3 text-base bg-yellow-400 font-semi rounded-xl">
+        <Link href={`/formularios/evcl/${item._id}`}>Editar</Link>
+      </div>
+    );
+    paraTabla.push({
+      id: item._id,
+      datenow: objFecha,
+      tipolata: item.tipolata,
+      producto: item.producto,
+      link: linklink,
+    });
+  });
+
+  function dateTemplate(rowData, column) {
+    return rowData['datenow'].toLocaleDateString('en-US', {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  }
+
   return (
     <Layout>
       <div className="flex items-center justify-center">
         <Link href="https://i.ibb.co/gRvS3np/evcl.png">
-          <div className="button-borders">
-            <button className="primary-button">Ver Version Fisica</button>
+          <div className="button-borders top-3">
+            <button className="primary-button ">Ver Version Fisica</button>
           </div>
         </Link>
       </div>
       <div className="flex justify-center h-screen bg-white ">
-        <div className="relative top-36 w-72 ">
+        <div className="relative top-10">
           <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <h1 className="text-2xl font-bold">Examen Visual Cierre Latas</h1>
-              <h1 className="text-lg font-bold">&apos;Header&apos;</h1>
+              <h1 className="text-2xl font-semi">Examen Visual Cierre Latas</h1>
               <br />
-              <div className="flex">
-                <h2 className="font-bold">Fecha:</h2>
-                <br />
-                <h2 className="pl-5">{datenow}</h2>
-              </div>
-              <div>
-                <h2 className="font-bold">Producto:</h2>
-                <div className="dropdown-container"></div>
-                <Controller
-                  name="producto"
-                  control={control}
-                  render={({ onChange, value, ref }) => (
-                    <Select
-                      options={paraCBP}
-                      placeholder="Producto"
-                      value={selectedOptions}
-                      onChange={(val) => onChange(val.value)}
-                      isSearchable={true}
-                    />
-                  )}
-                />
-              </div>
-              <div>
-                <h2 className="font-bold">Tamaño Lata:</h2>
-                <div className="dropdown-container"></div>
-                <Controller
-                  name="tipolata"
-                  control={control}
-                  render={({ onChange, value, ref }) => (
-                    <Select
-                      options={paraCBTL2}
-                      placeholder="Tipo de Lata"
-                      value={selectedOptions}
-                      onChange={(val) => onChange(val.value)}
-                      isSearchable={true}
-                    />
-                  )}
-                />
+              <div className="grid grid-cols-1 gap-4">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-2xl text-left font-semi ">Fecha :</h4>
+                  <h4 className="text-xl text-right">{datenow}</h4>
+                </div>
+                <div>
+                  <h2 className="text-2xl text-left font-semi">Producto:</h2>
+                  <Controller
+                    name="producto"
+                    control={control}
+                    render={({ onChange, value, ref }) => (
+                      <Select
+                        options={paraCBP}
+                        placeholder="Producto"
+                        className="text-xl"
+                        value={selectedOptions}
+                        onChange={(val) => onChange(val.value)}
+                        isSearchable={true}
+                      />
+                    )}
+                  />
+                </div>
+                <div>
+                  <h2 className="text-2xl text-left font-semi">Tamaño Lata:</h2>
+                  <Controller
+                    name="tipolata"
+                    control={control}
+                    render={({ onChange, value, ref }) => (
+                      <Select
+                        options={paraCBTL2}
+                        className="text-xl"
+                        placeholder="Tipo de Lata"
+                        value={selectedOptions}
+                        onChange={(val) => onChange(val.value)}
+                        isSearchable={true}
+                      />
+                    )}
+                  />
+                </div>
               </div>
               <br />
-              <div className="">
+              <div className="text-xl">
                 <input
                   type="submit"
                   style={{
@@ -286,7 +197,111 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 py-3 md:grid-cols-3 lg:grid-cols-4">
+      <br />
+
+      {/* <div className="relative flex flex-col w-full overflow-x-auto rounded-xl">
+        <div className="flex-grow overflow-auto ">
+          <table>
+            <thead>
+              <tr>
+                <th
+                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
+                  width={'200px'}
+                >
+                  Fecha
+                </th>
+                <th
+                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
+                  width={'200px'}
+                >
+                  Tipo Lata
+                </th>
+                <th
+                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
+                  width={'200px'}
+                >
+                  Producto
+                </th>
+                <th className="sticky top-0 px-2 py-3 text-black bg-slate-300">
+                  Accion
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y bg-slate-100">
+              {sortedEHeaders.map((item) => (
+                <tr
+                  key={item._id}
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <td className="text-center">{item.datenow}</td>
+                  <td className="overflow-x-auto text-center">
+                    {item.tipolata}
+                  </td>
+                  <td className="text-center">{item.producto}</td>
+                  <td className="text-center">
+                    <Link
+                      href={`/formularios/evcl/${item._id}`}
+                      className="bg-gray-100"
+                    >
+                      <div
+                        className="flex justify-center"
+                        style={{
+                          width: '100px',
+                          alignContent: 'center',
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                          />
+                        </svg>
+                      </div>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div> */}
+      <br />
+      <div className="text-xl text-center App">
+        Buscar <br />
+        <InputText
+          onInput={(e) =>
+            setFilters({
+              global: {
+                value: e.target.value,
+                matchMode: FilterMatchMode.CONTAINS,
+              },
+            })
+          }
+        />
+        <br />
+        <DataTable
+          className="pt-3"
+          value={paraTabla}
+          sortMode="multiple"
+          filters={filters}
+          resizableColumns="true"
+          showGridlines
+        >
+          <Column field="datenow" body={dateTemplate} header="Fecha" sortable />
+          <Column field="tipolata" header="Tipo Lata" sortable />
+          <Column field="producto" header="Producto" sortable />
+          <Column field="link" header="Link" />
+        </DataTable>
+      </div>
+      {/* <div className="grid grid-cols-1 gap-4 py-3">
         {sortedEHeaders.map((EVCLheader) => (
           <Link
             key={EVCLheader._id}
@@ -316,7 +331,8 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
             </button>
           </Link>
         ))}
-      </div>
+      </div> */}
+      <br />
     </Layout>
   );
 }

@@ -162,50 +162,44 @@ export default function klk(props) {
       <br />
       <div className="flex justify-center">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-3xl font-bold text-center">
-            {'Examen Destructivo Doble Cierre Latas para :'}
+          <h1 className="py-2 text-3xl text-center font-semi">
+            Examen Destructivo Doble Cierre Latas para :
           </h1>
           <br />
-          <p className="text-2xl font-normal">{eddclheader._id}</p>
-          <br />
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {/* Fecha */}
-
-            <div className="">
-              <p className="text-3xl font-bold text-center">Fecha : </p>
-              <br />
-              <h2 className="text-2xl text-center">{eddclheader.datenow}</h2>
+            <div className="flex items-center justify-between">
+              <h4 className="text-2xl text-left font-semi ">Fecha :</h4>
+              <h4 className="text-xl text-right">{eddclheader.datenow}</h4>
             </div>
+
             {/* Tapadora Text-Input */}
-            <div className="">
-              <p className="text-3xl font-bold text-center">Tapadora N° :</p>
-              <br />
-              <h2 className="text-2xl text-center">{eddclheader.tapadora}</h2>
+            <div className="flex items-center justify-between">
+              <h4 className="text-2xl text-left font-semi ">Tapadora N° :</h4>
+              <h4 className="text-xl text-right">{eddclheader.tapadora}</h4>
             </div>
 
             {/* Tipo de Lata Text-Input */}
-            <div className="">
-              <p className="text-3xl font-bold text-center">Tipo de Lata :</p>
-              <br />
-              <h2 className="text-2xl text-center">{eddclheader.tipolata}</h2>
+            <div className="flex items-center justify-between">
+              <h4 className="text-2xl text-left font-semi ">Tipo de Lata :</h4>
+              <h4 className="text-xl text-right">{eddclheader.tipolata}</h4>
             </div>
 
             {/* Producto Text-Input */}
-            <div className="">
-              <p className="text-3xl font-bold text-center">Producto:</p>
-              <br />
-              <h2 className="text-2xl text-center">{eddclheader.producto}</h2>
+            <div className="flex items-center justify-between">
+              <h4 className="text-2xl text-left font-semi ">Producto :</h4>
+              <h4 className="text-xl text-right">{eddclheader.producto}</h4>
             </div>
           </div>
         </div>
       </div>
       <div className="flex justify-center w-full pt-5">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-3xl font-bold text-center">
-            Entrada Detalle para :
+          <h1 className="py-2 text-2xl text-center font-semi">
+            Entrada Detalle para:
           </h1>
-          <h2 className="text-2xl">
-            {eddclheader.producto} <br />({eddclheader.tipolata})
+          <h2 className="text-xl">
+            {eddclheader.producto} ({eddclheader.tipolata})
           </h2>
 
           <br />
@@ -219,15 +213,15 @@ export default function klk(props) {
                     onChange={handleChange}
                   >
                     {/* hora */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="font-bold">Hora:</h2>
-                      <h2 className="pl-5">{tiempoahora}</h2>
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-xl text-left font-semi">Hora :</h4>
+                      <h4 className="text-xl text-right">{tiempoahora}</h4>
                     </div>
                     <br />
                     {/* codigo */}
-                    <div className="grid justify-center grid-cols-2">
+                    <div className="grid justify-center grid-cols-1">
                       <div>
-                        <h2 className="font-bold">Codigo:</h2>
+                        <h2 className="text-xl text-left font-semi">Codigo:</h2>
                         <div className="flex justify-center">
                           <input
                             type="number"
@@ -238,9 +232,12 @@ export default function klk(props) {
                           />
                         </div>
                       </div>
+                      <br />
                       {/* cabeza no. */}
                       <div className="">
-                        <h2 className="font-bold">Cabeza No:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Cabeza No:
+                        </h2>
                         <div className="flex items-center justify-center">
                           <Controller
                             name="cabeza"
@@ -262,13 +259,13 @@ export default function klk(props) {
                     </div>
                     <br />
                     {/* ancho (min max) + espesor (min max) */}
-                    <div className="grid justify-center grid-cols-2 text-center">
+                    <div className="grid justify-center grid-cols-1 text-center">
                       <div className="">
-                        <h2 className="font-bold">Ancho:</h2>
+                        <h2 className="text-xl text-left font-semi">Ancho:</h2>
                         <div className="flex justify-center item-centerd">
                           <input
                             type="decimal"
-                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="anchomin"
                             placeholder="Min"
                             name="anchomin"
@@ -276,7 +273,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="anchomax"
                             placeholder="Max"
                             name="anchomax"
@@ -284,13 +281,16 @@ export default function klk(props) {
                           />
                         </div>
                       </div>
+                      <br />
                       {/* espesor (min max) */}
                       <div className="">
-                        <h2 className="font-bold">Espesor:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Espesor:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="decimal"
-                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="espesormin"
                             placeholder="Min"
                             name="espesormin"
@@ -298,7 +298,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="espesormax"
                             placeholder="Max"
                             name="espesormax"
@@ -309,13 +309,15 @@ export default function klk(props) {
                     </div>
                     <br />
                     {/* profund (min max) */}
-                    <div className="grid justify-center grid-cols-2 text-center">
+                    <div className="grid justify-center grid-cols-1 text-center">
                       <div className="">
-                        <h2 className="font-bold">Profundidad:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Profundidad:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="decimal"
-                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="profundmin"
                             placeholder="Min"
                             name="profundmin"
@@ -323,7 +325,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="profundmax"
                             placeholder="Max"
                             name="profundmax"
@@ -331,13 +333,16 @@ export default function klk(props) {
                           />
                         </div>
                       </div>
+                      <br />
                       {/* ganchocuerpo (min max) */}
                       <div className="">
-                        <h2 className="font-bold">Gancho Cuerpo:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Gancho Cuerpo:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="decimal"
-                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="ganchocuerpomin"
                             placeholder="Min"
                             name="ganchocuerpomin"
@@ -345,7 +350,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="ganchocuerpomax"
                             placeholder="Max"
                             name="ganchocuerpomax"
@@ -356,13 +361,15 @@ export default function klk(props) {
                     </div>
                     <br />
                     {/* ganchotapa (min max) + traslape (min max) */}
-                    <div className="grid justify-center grid-cols-2 text-center">
+                    <div className="grid justify-center grid-cols-1 text-center">
                       <div className="">
-                        <h2 className="font-bold">Gancho Tapa:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Gancho Tapa:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="decimal"
-                            className=" form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="ganchotapamin"
                             placeholder="Min"
                             name="ganchotapamin"
@@ -370,7 +377,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="ganchotapamax"
                             placeholder="Max"
                             name="ganchotapamax"
@@ -378,13 +385,16 @@ export default function klk(props) {
                           />
                         </div>
                       </div>
+                      <br />
                       {/* traslape (min max) */}
                       <div className="">
-                        <h2 className="font-bold">Traslape:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Traslape:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="decimal"
-                            className="form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="traslapemin"
                             placeholder="Min"
                             name="traslapemin"
@@ -392,7 +402,7 @@ export default function klk(props) {
                           />
                           <input
                             type="decimal"
-                            className="ml-3 form-control block w-1/3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className="ml-3 form-control block w-1/2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="traslapemax"
                             placeholder="Max"
                             name="traslapemax"
@@ -403,9 +413,11 @@ export default function klk(props) {
                     </div>
                     <br />
                     {/* arrugas + Banda de Impresion */}
-                    <div className="grid justify-center grid-cols-2 text-center">
+                    <div className="grid justify-center grid-cols-1 text-center">
                       <div>
-                        <h2 className="font-bold">Arrugas:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Arrugas:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="number"
@@ -418,9 +430,12 @@ export default function klk(props) {
                           />
                         </div>
                       </div>
+                      <br />
                       {/* Banda de Impresion */}
                       <div className="">
-                        <h2 className="font-bold">Banda de Impresion:</h2>
+                        <h2 className="text-xl text-left font-semi">
+                          Banda de Impresion:
+                        </h2>
                         <div className="flex justify-center">
                           <input
                             type="char"
@@ -438,7 +453,9 @@ export default function klk(props) {
 
                     {/* Fabrica Latas 2. */}
                     <div className="text-center">
-                      <h2 className="font-bold">Fabrica Latas:</h2>
+                      <h2 className="text-xl text-left font-semi">
+                        Fabrica Latas:
+                      </h2>
                       <div className="flex items-center justify-center">
                         <Controller
                           name="fabricalatas"
@@ -460,7 +477,9 @@ export default function klk(props) {
                     <br />
                     {/* Observaciones */}
                     <div>
-                      <h2 className="font-bold">Observaciones:</h2>
+                      <h2 className="text-xl text-left font-semi">
+                        Observaciones:
+                      </h2>
                       <div className="px-3 ">
                         <textarea
                           id="observaciones"
@@ -489,9 +508,9 @@ export default function klk(props) {
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">
+                {/* <th scope="col" className="px-6 py-3">
                   Head-ID
-                </th>
+                </th> */}
                 <th scope="col" className="px-6 py-3">
                   Hora
                 </th>
@@ -560,7 +579,7 @@ export default function klk(props) {
                   key={item.headid}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                 >
-                  <td className="">{item._id}</td>
+                  {/* <td className="">{item._id}</td> */}
                   <td className="text-center">{item.horanow}</td>
                   <td className="text-center">{item.codigo}</td>
                   <td className="text-center">{item.cabeza}</td>

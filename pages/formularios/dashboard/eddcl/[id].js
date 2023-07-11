@@ -274,83 +274,112 @@ export default function ScreenEachDash({
         </div>
         <br />
         <div className="text-lg">
-          <h2 className="text-2xl font-bold">Dashboard EDDCL</h2>
+          <h2 className="text-2xl font-semi">Dashboard EDDCL</h2>
           <br />
-          <div className="flex items-center justify-center">
-            <h4 className="w-1/2 font-bold">Dia:</h4>
-            <h4 className="w-1/2 pl-8">{cabecera2[0].datenow}</h4>
+          <div className="flex items-center justify-between">
+            <h4 className="px-5 font-bold text-left">Dia:</h4>
+            <h4 className="pr-5 text-right ">{cabecera2[0].datenow}</h4>
           </div>
           <br />
-          <div className="flex items-center justify-center">
-            <h4 className="w-1/2 font-bold">Codigo Producto:</h4>
-            <h4 className="w-1/2 pl-8">{cabecera2[0].producto}</h4>
+          <div className="flex items-center justify-between">
+            <h4 className="px-5 font-bold text-left">Codigo Producto:</h4>
+            <h4 className="pr-5 text-right ">{cabecera2[0].producto}</h4>
           </div>
           <br />
-          <div className="flex items-center">
-            <h4 className="w-1/2 font-bold">Nombre Producto:</h4>
-            <h4 className="w-1/2 pl-8">{cabecera2[0].productoname}</h4>
+          <div className="flex items-center justify-between">
+            <h4 className="px-5 font-bold text-left">Nombre Producto:</h4>
+            <h4 className="pr-5 text-right ">{cabecera2[0].productoname}</h4>
           </div>
           <br />
-          <div className="flex items-center">
-            <h4 className="w-1/2 font-bold">Tipo lata:</h4>
-            <h4 className="w-1/2 pl-8">{cabecera2[0].tipolata}</h4>
+          <div className="flex items-center justify-between">
+            <h4 className="px-5 font-bold text-left">Tipo lata:</h4>
+            <h4 className="pr-5 text-right ">{cabecera2[0].tipolata}</h4>
           </div>
           <br />
-          <div className="flex items-center justify-center">
-            <h4 className="font-bold">Registros:</h4>
-            <h4 className="pl-4">{detalles.length}</h4>
+          <div className="flex items-center justify-between">
+            <h4 className="px-5 font-bold text-left">Registros:</h4>
+            <h4 className="pr-5 text-right ">{detalles.length}</h4>
           </div>
           <br />
         </div>
         <div>
-          <h1 className="text-2xl font-bold">Averages</h1>
+          <h1 className="text-2xl font-semi">Averages</h1>
         </div>
         <br />
         <div>
-          <h1 className="text-xl font-bold">Ancho:</h1>
+          <h1 className="text-xl font-semi">Ancho:</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           {/* ancho minimo */}
-          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+          <div className="px-5 py-10 text-xl text-black bg-gray-400 rounded ">
             Minimo:
-            <h1 className="text-xs">{`Minimo Promedio: ${anchoMinProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${anchoMinMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${anchoMinMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{'Minimo Promedio: '}</h1>
+              <h1 className="text-lg">{`${anchoMinProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{'Minimo: '}</h1>
+              <h1 className="text-lg">{`${anchoMinMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{'Maximo: '}</h1>
+
+              <h1 className="text-lg">{`${anchoMinMax.toFixed(2)}`}</h1>
+            </div>
           </div>
           {/* ancho maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Maximo:
-            <h1 className="text-xs">{`Minimo Promedio: ${anchoMaxProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${anchoMaxMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${anchoMaxMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo Promedio: `}</h1>
+              <h1 className="text-lg">{`${anchoMaxProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${anchoMaxMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${anchoMaxMax.toFixed(2)}`}</h1>
+            </div>
           </div>
         </div>
         <div>
           <br />
           <h1 className="text-xl font-bold">Espesor:</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           {/* espesor minimo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Minimo:
-            <h1 className="text-xs">{`Minimo Promedio: ${espesorMinProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${espesorMinMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${espesorMinMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo Promedio: `}</h1>
+              <h1 className="text-lg">{`${espesorMinProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${espesorMinMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${espesorMinMax.toFixed(2)}`}</h1>
+            </div>
           </div>
           {/* espesor maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Maximo:
-            <h1 className="text-xs">{`Maximo Promedio: ${espesorMaxProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${espesorMaxMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${espesorMaxMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo Promedio: `}</h1>
+              <h1 className="text-lg">{`${espesorMaxProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${espesorMaxMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${espesorMaxMax.toFixed(2)}`}</h1>
+            </div>
           </div>
         </div>
         {/* profund minimo */}
@@ -358,23 +387,37 @@ export default function ScreenEachDash({
           <br />
           <h1 className="text-xl font-bold">Profundidad:</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Minimo:
-            <h1 className="text-xs">{`Minimo Promedio: ${profMinProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${profMinMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${profMinMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo Promedio: `}</h1>
+              <h1 className="text-lg">{`${profMinProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${profMinMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${profMinMax.toFixed(2)}`}</h1>
+            </div>
           </div>
           {/* profund maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Maximo:
-            <h1 className="text-xs">{`Maximo Promedio: ${profMaxProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${profMaxMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${profMaxMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo Promedio: `}</h1>
+              <h1 className="text-lg">{`${profMaxProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${profMaxMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${profMaxMax.toFixed(2)}`}</h1>
+            </div>
           </div>
         </div>
         {/* gancho cuerpo minimo */}
@@ -382,23 +425,37 @@ export default function ScreenEachDash({
           <br />
           <h1 className="text-xl font-bold">Gancho Cuerpo:</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Minimo:
-            <h1 className="text-xs">{`Minimo Promedio: ${ganCuMinProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${ganCuMinMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${ganCuMinMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo Promedio: `}</h1>
+              <h1 className="text-lg">{`${ganCuMinProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${ganCuMinMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${ganCuMinMax.toFixed(2)}`}</h1>
+            </div>
           </div>
           {/* profund maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Maximo:
-            <h1 className="text-xs">{`Maximo Promedio: ${ganCuMaxProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${ganCuMaxMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${ganCuMaxMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo Promedio:`}</h1>
+              <h1 className="text-lg">{` ${ganCuMaxProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${ganCuMaxMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${ganCuMaxMax.toFixed(2)}`}</h1>
+            </div>
           </div>
         </div>
         {/* gancho tapa minimo */}
@@ -406,51 +463,70 @@ export default function ScreenEachDash({
           <br />
           <h1 className="text-xl font-bold">Gancho Tapa:</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           {/* gancho tapa maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Minimo:
-            <h1 className="text-xs">{`Minimo Promedio: ${ganTaMinProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${ganTaMinMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${ganTaMinMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo Promedio: `}</h1>
+              <h1 className="text-lg">{`${ganTaMinProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${ganTaMinMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${ganTaMinMax.toFixed(2)}`}</h1>
+            </div>
           </div>
           {/* espesor maximo */}
           <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
             Maximo:
-            <h1 className="text-xs">{`Maximo Promedio: ${ganTaMaxProm.toFixed(
-              2
-            )}`}</h1>
-            <h1 className="text-xs">{`Minimo: ${ganTaMaxMin.toFixed(2)}`}</h1>
-            <h1 className="text-xs">{`Maximo: ${ganTaMaxMax.toFixed(2)}`}</h1>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo Promedio: `}</h1>
+              <h1 className="text-lg">{`${ganTaMaxProm.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Minimo: `}</h1>
+              <h1 className="text-lg">{`${ganTaMaxMin.toFixed(2)}`}</h1>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <h1 className="text-lg font-bold">{`Maximo: `}</h1>
+              <h1 className="text-lg">{`${ganTaMaxMax.toFixed(2)}`}</h1>
+            </div>
           </div>
         </div>
         {/* traslape minimo */}
         <div>
           <br />
-          <h1 className="text-xl font-bold">Traslape + Arrugas:</h1>
+          <h1 className="text-xl font-bold">Traslape</h1>
         </div>
-        <div className="grid grid-cols-2 gap-5">
-          <div className="px-5 py-10 text-lg text-black bg-gray-400 rounded ">
+        <div className="grid grid-cols-1 gap-5">
+          <div className="px-5 py-10 text-lg font-bold text-black bg-gray-400 rounded ">
             Traslape:
             <div className="flex items-center justify-center">
-              <h1 className="pr-5 text-xs">40</h1>
+              <h1 className="pr-5 text-lg">40</h1>
               <ProgressBar progressPercentage={(traslapeMin - 40) * 10} />
-              <h1 className="pl-5 text-xs">50</h1>
+              <h1 className="pl-5 text-lg">50</h1>
             </div>
-            <h1 className="text-xs">{`Traslape Promedio: ${traslapeMin.toFixed(
-              3
-            )}`}</h1>
+            <div className="flex items-center justify-center pt-2">
+              <h1 className="text-lg font-bold">{`Traslape Promedio: `}</h1>
+              <h1 className="pl-5 text-lg">{`${traslapeMin.toFixed(3)}`}</h1>
+            </div>
           </div>
           {/* arrugas */}
+          <div>
+            <br />
+            <h1 className="text-xl font-bold">Arrugas</h1>
+          </div>
           <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
             {arrugas === 0 ? (
-              <span class="bg-green-300 text-green-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-green-900 dark:text-green-300">
+              <span className="px-5 py-5 text-2xl font-medium text-green-800 bg-green-300 rounded-full dark:bg-green-900 dark:text-green-300">
                 Arrugas: {arrugas}
               </span>
             ) : (
-              <span class="bg-red-300 text-red-800 text-4xl font-medium py-5 px-5 rounded-full dark:bg-red-900 dark:text-red-300">
+              <span className="px-5 py-5 text-2xl font-medium text-red-800 bg-red-300 rounded-full dark:bg-red-900 dark:text-red-300">
                 Arrugas: {arrugas}
               </span>
             )}
@@ -458,8 +534,8 @@ export default function ScreenEachDash({
         </div>
         <div>
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
+              <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     Hora

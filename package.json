@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^1.0.6",
+    "@jikji/react": "^0.3.2",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@next/font": "13.1.1",
@@ -26,6 +27,7 @@
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.3",
     "next": "13.1.1",
+    "primereact": "^9.6.0",
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
@@ -34,6 +36,7 @@
     "react-native-dropdown-picker": "^5.4.4",
     "react-select": "^5.7.0",
     "react-select-search": "^4.1.6",
+    "react-table": "^7.8.0",
     "react-toastify": "^9.1.1"
   },
   "devDependencies": {

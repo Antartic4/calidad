@@ -41,31 +41,6 @@ export default function Layout({ title, children }) {
 
   const [query, setQuery] = useState('');
 
-  let nav_home = router.locale === 'en' ? 'Home' : 'Inicio';
-
-  let nav_shop = router.locale === 'en' ? 'Shop' : 'Tienda';
-
-  let nav_cart = router.locale === 'en' ? 'Cart' : 'Carrito';
-
-  let nav_aboutus = router.locale === 'en' ? 'About Us' : 'Sobre Nosotros';
-
-  let nav_search =
-    router.locale === 'en' ? 'Search Products' : 'Buscar Productos';
-
-  let nav_profile = router.locale === 'en' ? 'Profile' : 'Perfil';
-
-  let nav_historyorders =
-    router.locale === 'en' ? 'Order History' : 'Historial Ordenes';
-
-  let nav_adminportal =
-    router.locale === 'en' ? 'Admin Portal' : 'Portal de Admin';
-
-  let nav_logout = router.locale === 'en' ? 'Logout' : 'Cerrar Session';
-
-  let nav_login = router.locale === 'en' ? 'Login' : 'Iniciar sesión';
-
-  let nav_myprofile = router.locale === 'en' ? 'My Profile' : 'Mi Perfil';
-
   return (
     <>
       <Head>
@@ -127,7 +102,7 @@ export default function Layout({ title, children }) {
                         <Divider light />
                         <Box>
                           <div className="px-3 py-3 font-bold text-center hover:bg-gray-200">
-                            <Link href="/">{nav_home}</Link>
+                            <Link href="/">{'Home'}</Link>
                           </div>
                           <div className="px-3 py-3 font-bold text-center hover:bg-gray-200">
                             <Link href="/aboutus">
@@ -147,34 +122,30 @@ export default function Layout({ title, children }) {
                   </div>
                   <div className="flex items-center justify-center">
                     <div>
-                      <a className="px-4">
+                      <a className="">
                         <Link legacyBehavior href="/">
                           <Image
                             src={logofamosa}
                             className="flex shrink-0"
                             alt="improved-l-1"
                             border="0"
-                            width={150}
-                            height={75}
+                            width={100}
+                            height={100}
                           />
                         </Link>
                       </a>
                     </div>
                     <div className="">
                       <Link href="/">
-                        <div className="text-3xl ">
-                          <h4 className="pl-5 text-center">
-                            La Famosa - CALIDAD
-                          </h4>
+                        <div className="text-2xl">
+                          <h4 className="pl-2 text-center">Calidad</h4>
                         </div>
                       </Link>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <ul className="items-center hidden pr-10 text-base font-semibold cursor-pointer xl:flex">
-                      <li className="px-3 py-3 hover:bg-gray-200">
-                        {nav_home}
-                      </li>
+                      <li className="px-3 py-3 hover:bg-gray-200">Home</li>
                       <li className="px-3 py-3 hover:bg-gray-200">
                         <Link legacyBehavior href="/">
                           <div>Formularios</div>
@@ -192,7 +163,7 @@ export default function Layout({ title, children }) {
             </div>
           </header>
           <main className="container px-4 m-auto mt-4">{children}</main>
-          <footer className="items-center justify-center h-20 pt-3 text-center shadow-inner">
+          <footer className="items-center justify-center h-20 pt-5 text-center bg-white shadow-inner">
             <p className="text-lg ">Copyright © 2023 Peravia Industrial S.A.</p>
           </footer>
         </div>

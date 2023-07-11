@@ -140,6 +140,8 @@ export default function klk(props) {
     setEVCLHInfo({ ...eVCLHInfo, [event.target.name]: event.target.value });
   };
 
+  console.log('evcldetail', evcldetail);
+
   return (
     <Layout>
       <div className="flex items-center justify-center">
@@ -152,36 +154,34 @@ export default function klk(props) {
       <br />
       <div className="flex justify-center">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-2xl font-bold text-center">
-            Examen Destructivo Doble Cierre Latas para :
-            <p className="text-2xl font-bold">{evclheader._id}</p>
+          <h1 className="py-2 text-2xl text-center font-semi">
+            Examen Destructivo Doble Cierre Latas
           </h1>
           <br />
           {/* Fecha */}
-
-          <div className="flex justify-between">
-            <p className="font-bold text-left">Fecha : </p>
-            <div className="pl-5 pr-10 text-right">{evclheader.datenow}</div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-xl text-left font-semi">Fecha :</h4>
+            <h4 className="text-lg text-right">{evclheader.datenow}</h4>
           </div>
-
+          <br />
           {/* Tipo de Lata Text-Input */}
-          <div className="flex justify-between py-2">
-            <p className="font-bold text-left">Tipo de Lata :</p>
-            <div className="pr-10 text-right">{evclheader.tipolata}</div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-xl text-left font-semi">Tipo de Lata :</h4>
+            <h4 className="text-lg text-right">{evclheader.tipolata}</h4>
           </div>
-
+          <br />
           {/* Producto Text-Input */}
-          <div className="flex justify-between py-2 pb-5">
-            <p className="font-bold text-left">Producto:</p>
-            <div className="pr-10 text-right">{evclheader.producto}</div>
+          <div className="flex items-center justify-between">
+            <h4 className="text-xl text-left font-semi">Producto :</h4>
+            <h4 className="text-lg text-right">{evclheader.producto}</h4>
           </div>
         </div>
+        <br />
       </div>
       <div className="flex justify-center pt-5">
         <div className="block w-full p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
-          <h1 className="py-2 text-2xl font-bold text-center">
-            Entrada Detalle para : <br /> {evclheader.producto} (
-            {evclheader.tipolata})
+          <h1 className="py-2 text-2xl text-center font-semi">
+            Entrada Detalle para: {evclheader.producto} ({evclheader.tipolata})
           </h1>
           <br />
           {/* donde van los campos a entrar */}
@@ -194,37 +194,229 @@ export default function klk(props) {
                     onChange={handleChange}
                   >
                     {/* hora */}
-                    <div className="flex justify-center">
-                      <h2 className="font-bold">Hora:</h2>
-                      <h2 className="pl-5">{tiempoahora}</h2>
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-xl text-left font-semi">Hora :</h4>
+                        <h4 className="text-lg">{tiempoahora}</h4>
+                      </div>
                     </div>
                     <br />
                     {/* codigo */}
-                    <div className="flex justify-center">
-                      <div>
-                        <h2 className="font-bold">Codigo:</h2>
-                        <div className="px-3">
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <h2 className="text-xl text-left font-semi">Codigo:</h2>
+                        <div className="flex justify-center item-centerd">
                           <input
                             type="number"
-                            className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            className=" form-control block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             placeholder="Codigo"
                             name="codigo"
                             ref={register}
                           />
                         </div>
                       </div>
-                      <div>
-                        {/* Fabrica Latas */}
-                        <h2 className="font-bold">Fabrica Latas:</h2>
-                        <div className="px-3 ">
-                          <div className="dropdown-container">
+                    </div>
+                    <br />
+
+                    {/* Fabrica Latas */}
+
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="">
+                        <h4 className="text-xl text-left font-semi">
+                          Fabrica Latas:
+                        </h4>
+                        <div className="w-full">
+                          <Controller
+                            name="fabricalatas"
+                            control={control}
+                            render={({ onChange, value, ref }) => (
+                              <Select
+                                options={opciones3}
+                                placeholder=""
+                                // value={selectedOptions}
+                                onChange={(val) => onChange(val.value)}
+                                isSearchable={true}
+                              />
+                            )}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <h2 className="text-xl font-semi">Cabezas Aceptadas</h2>
+                    {/* Cabeza #1 + Cabeza #2*/}
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #1:</h2>
+                          <div className="w-full">
                             <Controller
-                              name="fabricalatas"
+                              name="cabeza1"
                               control={control}
                               render={({ onChange, value, ref }) => (
                                 <Select
-                                  options={opciones3}
-                                  placeholder=""
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #2:</h2>
+                          <div className="w-full">
+                            <Controller
+                              name="cabeza2"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    {/* Cabeza #3 + Cabeza #4 */}
+
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #3:</h2>
+                          <div className="w-full">
+                            <Controller
+                              name="cabeza3"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #4:</h2>
+                          <div className="w-full">
+                            <Controller
+                              name="cabeza4"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+
+                    {/* Cabeza #5 + Cabeza #6 */}
+
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #5:</h2>
+                          <div className="w-full">
+                            <Controller
+                              name="cabeza5"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-semi">Cabeza #6:</h2>
+                          <div className="w-full">
+                            <Controller
+                              name="cabeza6"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  className="text-xl"
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h2 className="pt-5 text-xl font-semi">Inspección Latas</h2>
+
+                    {/* Daños Mecanicos + Estado Compuesto */}
+
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h2 className="text-lg font-semi">
+                            Daños Mecanicos:
+                          </h2>
+                          <div className="w-full">
+                            <Controller
+                              name="danos"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones}
+                                  placeholder="Si / No"
+                                  // value={selectedOptions}
+                                  onChange={(val) => onChange(val.value)}
+                                  isSearchable={true}
+                                />
+                              )}
+                            />
+                          </div>
+                        </div>
+                        <div className="pl-2">
+                          <h2 className="text-lg font-semi">
+                            Estado Compuesto:
+                          </h2>
+                          <div className="w-full">
+                            <Controller
+                              name="estado"
+                              control={control}
+                              render={({ onChange, value, ref }) => (
+                                <Select
+                                  options={opciones2}
+                                  placeholder="A -> F"
                                   // value={selectedOptions}
                                   onChange={(val) => onChange(val.value)}
                                   isSearchable={true}
@@ -237,178 +429,10 @@ export default function klk(props) {
                     </div>
 
                     <br />
-                    <h2 className="font-bold">Cabezas Aceptadas</h2>
-                    {/* Cabeza #1 */}
-                    <div className="flex">
-                      <div>
-                        <h2 className="font-bold">Cabeza #1:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza1"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                      {/* Cabeza #2 */}
-                      <div>
-                        <h2 className="font-bold">Cabeza #2:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza2"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <br />
-                    {/* Cabeza #3 */}
-                    <div className="flex">
-                      <div>
-                        <h2 className="font-bold">Cabeza #3:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza3"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                      {/* Cabeza #4 */}
-                      <div>
-                        <h2 className="font-bold">Cabeza #4:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza4"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <br />
-                    {/* Cabeza #5 */}
-                    <div className="flex">
-                      <div>
-                        <h2 className="font-bold">Cabeza #5:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza5"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                      {/* Cabeza #6 */}
-                      <div>
-                        <h2 className="font-bold">Cabeza #6:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="cabeza6"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <br />
-
-                    <h2 className="font-bold">Inspección Latas</h2>
-
-                    {/* Daños Mecanicos */}
-                    <div className="flex">
-                      <div>
-                        <h2 className="font-bold">Daños Mecanicos:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="danos"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones}
-                                placeholder="Si / No"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                      {/* Estado Compuesto */}
-                      <div>
-                        <h2 className="font-bold">Estado Compuesto:</h2>
-                        <div className="px-3 dropdown-container">
-                          <Controller
-                            name="estado"
-                            control={control}
-                            render={({ onChange, value, ref }) => (
-                              <Select
-                                options={opciones2}
-                                placeholder="A -> F"
-                                // value={selectedOptions}
-                                onChange={(val) => onChange(val.value)}
-                                isSearchable={true}
-                              />
-                            )}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <br />
                     {/* Aceptacion */}
-                    <div className="flex items-center justify-center">
-                      <h2 className="font-bold">Aceptación:</h2>
-                      <div className="px-3 dropdown-container ">
+                    <div className="grid justify-center grid-cols-1 text-center">
+                      <div className="flex items-center justify-between">
+                        <h2 className="text-lg font-semi">Aceptación:</h2>
                         <Controller
                           name="aceptacion"
                           control={control}
@@ -427,7 +451,9 @@ export default function klk(props) {
                     <br />
                     {/* Observaciones */}
                     <div>
-                      <h2 className="font-bold text-left">Observaciones:</h2>
+                      <h2 className="text-lg text-left font-semi">
+                        Observaciones:
+                      </h2>
                       <div className="px-3 ">
                         <textarea
                           id="observaciones"
@@ -453,12 +479,9 @@ export default function klk(props) {
       <br />
       <div>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">
-                  Head-ID
-                </th>
                 <th scope="col" className="px-6 py-3">
                   Hora
                 </th>
@@ -500,10 +523,9 @@ export default function klk(props) {
             <tbody>
               {evcldetail.map((item) => (
                 <tr
-                  key={item.headid}
+                  key={item._id}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                 >
-                  <td className="">{item._id}</td>
                   <td className="text-center">{item.horanow}</td>
                   <td className="text-center">{item.codigo}</td>
 
