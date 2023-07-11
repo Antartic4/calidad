@@ -148,10 +148,12 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
     handleSubmit,
     control,
     formState: { errors },
+    formState,
   } = useForm();
 
+  const { isSubmitting } = formState;
+
   const onSubmit = async (formData, e) => {
-    console.log(formData);
     try {
       await axios.post('/../api/eddclinsert', {
         tapadora: formData.tapadora,
@@ -162,7 +164,12 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
     } catch (err) {
       alert(err);
     }
-    router.reload();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 3000);
+      router.reload();
+    });
   };
 
   function getCurrentDate(separator = '-') {
@@ -280,7 +287,7 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
       link: linklink,
     });
   });
-  console.log('paraTabla', paraTabla);
+  // console.log('paraTabla', paraTabla);
 
   function dateTemplate(rowData, column) {
     return rowData['datenow'].toLocaleDateString('en-US', {
@@ -377,14 +384,19 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
                 </div>
               </div>
               <br />
-              <div className="text-center">
-                <input
-                  type="submit"
-                  style={{
-                    fontSize: '32px',
-                    width: 287,
-                  }}
-                />
+              <div className="relative z-0 flex justify-center text-center">
+                <div className="button-borders">
+                  <button
+                    disabled={isSubmitting}
+                    className="z-20 primary-button"
+                  >
+                    {isSubmitting ? (
+                      <p className="text-lg">Cargando</p>
+                    ) : (
+                      <p className="text-lg">Submit</p>
+                    )}
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -406,13 +418,14 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
             })
           }
         />
-        <br />
         <DataTable
+          className="pt-3"
           value={paraTabla}
           sortMode="multiple"
           filters={filters}
           resizableColumns="true"
           showGridlines
+          alwaysShowPaginator
         >
           <Column field="datenow" body={dateTemplate} header="Fecha" sortable />
           <Column field="tapadora" header="Tapadora" sortable />
@@ -421,36 +434,6 @@ export default function Eddcl2({ maestroprods, EDDCLheaders }) {
           <Column field="link" header="Link" />
         </DataTable>
       </div>
-
-      {/* <div className="grid grid-cols-1 gap-4 py-3">
-        {sortedData.map((item) => (
-          <Link key={item._id} href={`/formularios/eddcl/${item._id}`}>
-            <div className="py-2 border border-black rounded-lg">
-              <div className="flex justify-center object-cover pt-2 px-auto">
-                {item._id}
-              </div>
-              <div className="p-5">
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Fecha: </p>
-                  <p className="ml-5 text-right">{item.datenow}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Tapadora: </p>
-                  <p className="ml-5 text-right">{item.tapadora}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Tipo de Lata: </p>
-                  <p className="ml-5 text-right">{item.tipolata}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="mb-2 font-bold text-left">Producto ID: </p>
-                  <p className="ml-5 text-right">{item.producto}</p>
-                </div>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div> */}
       <br />
     </Layout>
   );
