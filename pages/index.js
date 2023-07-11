@@ -8,7 +8,7 @@ import Layout from '../src/components/Layout';
 export default function Home() {
   return (
     <Layout>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white">
         <div className="container px-6 py-10 mx-auto">
           <div>
             <h2 className="text-3xl font-bold underline">Formularios</h2>
