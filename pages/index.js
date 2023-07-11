@@ -13,7 +13,7 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-bold underline">Formularios</h2>
             <div className="grid grid-cols-1 gap-8 pt-5">
-              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 dark:border-gray-700 dark:hover:border-transparent">
+              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 ">
                 <Link href="/formularios/eddcl3">
                   <div className="flex justify-center">
                     <Image
@@ -26,16 +26,15 @@ export default function Home() {
                   </div>
                   <br />
                   <div className="">
-                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl dark:text-white group-hover:text-white">
+                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl group-hover:text-white">
                       Examen
                     </h1>
-                    <p className="mt-2 text-lg text-gray-800 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                    <p className="mt-2 text-lg text-gray-800 capitalize group-hover:text-gray-300">
                       Destructivo Doble Cierre Latas
                     </p>
                   </div>
                 </Link>
               </div>
-              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 dark:border-gray-700 dark:hover:border-transparent">
                 <Link href="/formularios/evcl">
                   <div className="flex justify-center">
                     <Image
@@ -48,17 +47,16 @@ export default function Home() {
                   </div>
                   <br />
                   <div>
-                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl dark:text-white group-hover:text-white">
+                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl group-hover:text-white">
                       Examen
                     </h1>
-                    <p className="mt-2 text-lg text-gray-800 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                    <p className="mt-2 text-lg text-gray-800 capitalize group-hover:text-gray-300">
                       Visual Cierre Latas
                     </p>
                   </div>
                 </Link>
               </div>
 
-              <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 dark:border-gray-700 dark:hover:border-transparent">
                 <Link href="/mantenimiento">
                   <div className="flex justify-center">
                     <Image
@@ -71,10 +69,10 @@ export default function Home() {
                   </div>
                   <br />
                   <div>
-                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl dark:text-white group-hover:text-white">
+                    <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl group-hover:text-white">
                       Entrada
                     </h1>
-                    <p className="mt-2 text-lg text-gray-800 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                    <p className="mt-2 text-lg text-gray-800 capitalize group-hover:text-gray-300">
                       Recepcion de Latas
                     </p>
                   </div>
@@ -86,7 +84,6 @@ export default function Home() {
           <br />
           <h2 className="text-3xl font-bold underline">Dashboard:</h2>
           <div className="grid grid-cols-1 gap-8 mt-8">
-            <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 dark:border-gray-700 dark:hover:border-transparent">
               <Link href="/formularios/dashboard/eddcl">
                 <div className="flex justify-center">
                   <Image
@@ -99,17 +96,16 @@ export default function Home() {
                 </div>
                 <br />
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl group-hover:text-white">
                     Dashboard
                   </h1>
-                  <p className="mt-2 text-lg text-gray-800 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-lg text-gray-800 capitalize group-hover:text-gray-300">
                     Destructivo Doble Cierre Latas
                   </p>
                 </div>
               </Link>
             </div>
 
-            <div className="px-12 py-8 text-black transition-colors duration-300 transform bg-gray-400 border cursor-pointer rounded-xl hover:text-white hover:border-transparent group hover:bg-gray-500 dark:border-gray-700 dark:hover:border-transparent">
               <Link href="/formularios/dashboard/evcl">
                 <div className="flex justify-center">
                   <Image
@@ -122,10 +118,10 @@ export default function Home() {
                 </div>
                 <br />
                 <div className="mt-4 sm:mx-4 sm:mt-0">
-                  <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl dark:text-white group-hover:text-white">
+                  <h1 className="text-2xl text-gray-700 capitalize font-semi md:text-2xl group-hover:text-white">
                     Dashboard
                   </h1>
-                  <p className="mt-2 text-lg text-gray-800 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-lg text-gray-800 capitalize group-hover:text-gray-300">
                     Visual Cierre Latas
                   </p>
                 </div>

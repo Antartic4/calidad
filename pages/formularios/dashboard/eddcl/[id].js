@@ -522,11 +522,11 @@ export default function ScreenEachDash({
           </div>
           <div className="px-5 py-10 text-2xl text-black bg-gray-400 rounded ">
             {arrugas === 0 ? (
-              <span className="px-5 py-5 text-2xl font-medium text-green-800 bg-green-300 rounded-full dark:bg-green-900 dark:text-green-300">
+              <span className="px-5 py-5 text-2xl font-medium text-green-800 bg-green-300 rounded-full ">
                 Arrugas: {arrugas}
               </span>
             ) : (
-              <span className="px-5 py-5 text-2xl font-medium text-red-800 bg-red-300 rounded-full dark:bg-red-900 dark:text-red-300">
+              <span className="px-5 py-5 text-2xl font-medium text-red-800 bg-red-300 rounded-full ">
                 Arrugas: {arrugas}
               </span>
             )}
@@ -534,8 +534,8 @@ export default function ScreenEachDash({
         </div>
         <div>
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-lg text-left text-gray-500 ">
+              <thead className="text-base text-gray-700 uppercase bg-gray-50 ">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     Hora
@@ -601,10 +601,7 @@ export default function ScreenEachDash({
               </thead>
               <tbody>
                 {detalles.map((item) => (
-                  <tr
-                    key={item.headid}
-                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                  >
+                  <tr key={item.headid} className="bg-white border-b ">
                     <td className="text-center">{item.horanow}</td>
                     <td className="text-center">{item.codigo}</td>
                     <td className="text-center">{item.cabeza}</td>
