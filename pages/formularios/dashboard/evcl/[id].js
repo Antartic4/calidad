@@ -429,8 +429,8 @@ export default function ScreenEachDash({
       </div>
       <div>
         <div className="relative overflow-x-auto rounded-lg shadow-md">
-          <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full text-lg text-left text-gray-500 ">
+            <thead className="text-base text-gray-700 uppercase bg-gray-50 ">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Hora
@@ -472,10 +472,7 @@ export default function ScreenEachDash({
             </thead>
             <tbody>
               {detalles.map((item) => (
-                <tr
-                  key={item.headid}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
+                <tr key={item.headid} className="bg-white border-b ">
                   <td className="text-center">{item.horanow}</td>
                   <td className="text-center">{item.codigo}</td>
 

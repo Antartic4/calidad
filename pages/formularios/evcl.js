@@ -231,7 +231,7 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
               {sortedEHeaders.map((item) => (
                 <tr
                   key={item._id}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  className="bg-white border-b"
                 >
                   <td className="text-center">{item.datenow}</td>
                   <td className="overflow-x-auto text-center">
