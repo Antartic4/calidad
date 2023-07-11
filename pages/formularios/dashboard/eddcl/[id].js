@@ -507,7 +507,11 @@ export default function ScreenEachDash({
             Traslape:
             <div className="flex items-center justify-center">
               <h1 className="pr-5 text-lg">40</h1>
-              <ProgressBar progressPercentage={(traslapeMin - 40) * 10} />
+              <ProgressBar
+                progressPercentage={
+                  (traslapeMin - 40) * 10 > 100 ? 100 : (traslapeMin - 40) * 10
+                }
+              />
               <h1 className="pl-5 text-lg">50</h1>
             </div>
             <div className="flex items-center justify-center pt-2">
