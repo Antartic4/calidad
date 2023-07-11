@@ -71,10 +71,12 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
     handleSubmit,
     control,
     formState: { errors },
+    formState,
   } = useForm();
 
+  const { isSubmitting } = formState;
+
   const onSubmit = async (formData, e) => {
-    // console.log(formData);
     try {
       await axios.post('/../api/evclinsert', {
         tipolata: formData.tipolata,
@@ -84,7 +86,12 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
     } catch (err) {
       alert(err);
     }
-    router.reload();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 3000);
+      router.reload();
+    });
   };
 
   function getCurrentDate(separator = '-') {
@@ -184,95 +191,24 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
                   />
                 </div>
               </div>
-              <br />
-              <div className="text-xl">
-                <input
-                  type="submit"
-                  style={{
-                    width: 287,
-                  }}
-                />
+              <div className="relative z-0 flex justify-center text-center pt-7">
+                <div className="button-borders">
+                  <button
+                    disabled={isSubmitting}
+                    className="z-20 primary-button"
+                  >
+                    {isSubmitting ? (
+                      <p className="text-lg">Cargando</p>
+                    ) : (
+                      <p className="text-lg">Submit</p>
+                    )}
+                  </button>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <br />
-
-      {/* <div className="relative flex flex-col w-full overflow-x-auto rounded-xl">
-        <div className="flex-grow overflow-auto ">
-          <table>
-            <thead>
-              <tr>
-                <th
-                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
-                  width={'200px'}
-                >
-                  Fecha
-                </th>
-                <th
-                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
-                  width={'200px'}
-                >
-                  Tipo Lata
-                </th>
-                <th
-                  className="sticky top-0 px-4 py-3 text-black bg-slate-300"
-                  width={'200px'}
-                >
-                  Producto
-                </th>
-                <th className="sticky top-0 px-2 py-3 text-black bg-slate-300">
-                  Accion
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y bg-slate-100">
-              {sortedEHeaders.map((item) => (
-                <tr
-                  key={item._id}
-                  className="bg-white border-b"
-                >
-                  <td className="text-center">{item.datenow}</td>
-                  <td className="overflow-x-auto text-center">
-                    {item.tipolata}
-                  </td>
-                  <td className="text-center">{item.producto}</td>
-                  <td className="text-center">
-                    <Link
-                      href={`/formularios/evcl/${item._id}`}
-                      className="bg-gray-100"
-                    >
-                      <div
-                        className="flex justify-center"
-                        style={{
-                          width: '100px',
-                          alignContent: 'center',
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-6 h-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                          />
-                        </svg>
-                      </div>
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
       <br />
       <div className="text-xl text-center App">
         Buscar <br />
@@ -301,37 +237,6 @@ export default function Eddcl2({ maestroprods, EVCLheaders }) {
           <Column field="link" header="Link" />
         </DataTable>
       </div>
-      {/* <div className="grid grid-cols-1 gap-4 py-3">
-        {sortedEHeaders.map((EVCLheader) => (
-          <Link
-            key={EVCLheader._id}
-            href={`/formularios/evcl/${EVCLheader._id}`}
-            className="bg-gray-100"
-          >
-            <button id="notabutton" className="w-full h-full">
-              <div className="py-2 border border-black rounded-lg">
-                <div className="flex justify-center object-cover pt-2 px-auto">
-                  {EVCLheader._id}
-                </div>
-                <div className="p-5">
-                  <div className="flex justify-between">
-                    <p className="mb-2 font-bold text-left">Fecha: </p>
-                    <p className="ml-5 text-right">{EVCLheader.datenow}</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p className="mb-2 font-bold text-left">Tipo de Lata: </p>
-                    <p className="ml-5 text-right">{EVCLheader.tipolata}</p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p className="mb-2 font-bold text-left">Producto ID: </p>
-                    <p className="ml-5 text-right">{EVCLheader.producto}</p>
-                  </div>
-                </div>
-              </div>
-            </button>
-          </Link>
-        ))}
-      </div> */}
       <br />
     </Layout>
   );

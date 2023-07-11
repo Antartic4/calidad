@@ -83,11 +83,6 @@ export default function ExamenDDCL({ EDDCLheaders, maestroprods }) {
     console.log(eDDCLHInfo);
   };
 
-  const handleChange2 = (event) => {
-    const target = event.target;
-    console.log(target);
-  };
-
   //const { handleSubmit, control, register } = useForm();
 
   // let valueproducto = { value }.value;
@@ -112,9 +107,9 @@ export default function ExamenDDCL({ EDDCLheaders, maestroprods }) {
 
   return (
     <Layout>
-      <div className="justify-center flex">
-        <div className="block p-6 rounded-lg shadow-lg bg-gray-300 border border-black max-w-lg">
-          <h1 className="text-2xl text-center py-2 font-bold">
+      <div className="flex justify-center">
+        <div className="block max-w-lg p-6 bg-gray-300 border border-black rounded-lg shadow-lg">
+          <h1 className="py-2 text-2xl font-bold text-center">
             Examen Destructivo Doble Cierre Latas
           </h1>
           <br />
@@ -196,7 +191,7 @@ export default function ExamenDDCL({ EDDCLheaders, maestroprods }) {
           </form>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 py-3">
+      <div className="grid grid-cols-1 gap-4 py-3 md:grid-cols-3 lg:grid-cols-4">
         {EDDCLheaders.map((EDDCLheader) => (
           <EDDCLheadersItem
             EDDCLheader={EDDCLheader}

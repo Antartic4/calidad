@@ -30,7 +30,10 @@ export default function klk(props) {
     handleSubmit,
     control,
     formState: { errors },
+    formState,
   } = useForm();
+
+  const { isSubmitting } = formState;
 
   const opciones3 = [
     {
@@ -133,7 +136,12 @@ export default function klk(props) {
     } catch (err) {
       alert(err);
     }
-    router.reload();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 10000);
+      router.reload();
+    });
   };
 
   const handleChange = (event) => {
@@ -465,9 +473,19 @@ export default function klk(props) {
                         ></textarea>
                       </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <br />
-                      <input type="submit" />
+                    <div className="relative z-0 flex justify-center pt-5 text-center">
+                      <div className="button-borders">
+                        <button
+                          disabled={isSubmitting}
+                          className="z-20 primary-button"
+                        >
+                          {isSubmitting ? (
+                            <p className="text-lg">Cargando</p>
+                          ) : (
+                            <p className="text-lg">Submit</p>
+                          )}
+                        </button>
+                      </div>
                     </div>
                   </form>
                 </div>
